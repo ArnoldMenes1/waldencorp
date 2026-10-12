@@ -188,6 +188,7 @@ header{padding-left:max(5vw,env(safe-area-inset-left));padding-right:max(5vw,env
 .mb p{margin:10px auto 24px}
 
 /* Responsive refinements — additive only; original page sections and motion remain intact */
+.skip-link{position:fixed;top:12px;left:12px;z-index:9999;padding:12px 16px;background:var(--sun);color:var(--ink);border-radius:10px;font-weight:700;transform:translateY(-160%)}.skip-link:focus{transform:translateY(0)}
 html{scroll-padding-top:90px;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body{min-width:320px}
 a,button,input,select,textarea{touch-action:manipulation}
@@ -238,6 +239,7 @@ textarea{min-height:130px;resize:vertical}
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Aller au contenu</a>
 <canvas id="bg" aria-hidden="true"></canvas>
 <div id="cur"><i></i><i></i><i></i><i></i></div>
 <header>
@@ -251,7 +253,7 @@ textarea{min-height:130px;resize:vertical}
 <button class="tg" id="tg" aria-label="Changer de thème">◐</button>
 </header>
 
-<main>
+<main id="main-content">
 <section class="page" id="p-">
 <div class="hero"><div>
 <h1 class="hl" id="hl">Vos idées deviennent des logiciels qui durent.</h1>
