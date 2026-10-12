@@ -489,6 +489,7 @@ document.getElementById('nl').onsubmit=async e=>{e.preventDefault();const i=e.ta
 if(!i.value||!i.checkValidity()){pop('Adresse invalide','Veuillez saisir une adresse e-mail valide.');i.focus();return}
 b.disabled=true;
 try{await rpc('subscribe_newsletter',{p_email:i.value});pop('Inscription réussie','Merci ! Votre adresse a été ajoutée à notre liste de diffusion.');i.value=''}
+catch{pop('Erreur',"Impossible de valider l'inscription. Réessayez dans un instant.")}
 b.disabled=false;
 };
 </script>
