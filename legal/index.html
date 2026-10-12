@@ -326,13 +326,13 @@ let busy=false,io;
 function split(h){if(h.dataset.s)return;h.dataset.s=1;const t=h.textContent;h.textContent='';t.split(' ').forEach((w,i)=>{const s=document.createElement('span');s.textContent=w;s.style.animationDelay=(.25+i*.07)+'s';h.append(s,' ')})}
 const T={solutions:'Solutions',services:'Services',methode:'Méthode',vision:'Vision',contact:'Contact',legal:'Informations légales',confirme:'Abonnement confirmé'};
 function show(){
-  const path=location.pathname.replace(/\\/+$/,'')||'/';
+  const path=location.pathname.replace(/\/+$/,'')||'/';
   const map={'/':'','/solutions':'solutions','/services':'services','/methode':'methode','/vision':'vision','/contact':'contact','/legal':'legal'};
-  const r=map[path]!==undefined?map[path]:(location.hash.replace(/^#\\/?/,'').split('/')[0]||'');
-  const seg=location.hash.replace(/^#\\/?/,'').split('/');
+  const r=map[path]!==undefined?map[path]:(location.hash.replace(/^#\/?/,'').split('/')[0]||'');
+  const seg=location.hash.replace(/^#\/?/,'').split('/');
   const id=r===''?'p-':Object.hasOwn(T,r)?'p-'+r:'p-404',p=document.getElementById(id)||document.getElementById('p-404');
   pages.forEach(x=>x.classList.toggle('on',x===p));
-  document.querySelectorAll('#nav a').forEach(a=>{const u=new URL(a.href,location.origin).pathname.replace(/\\/+$/,'')||'/';a.classList.toggle('on',u===path)});
+  document.querySelectorAll('#nav a').forEach(a=>{const u=new URL(a.href,location.origin).pathname.replace(/\/+$/,'')||'/';a.classList.toggle('on',u===path)});
   document.title="Informations légales | Walden Corp";
   p.querySelectorAll('.hl').forEach(h=>{h.dataset.s='';split(h)});
   io&&io.disconnect();
