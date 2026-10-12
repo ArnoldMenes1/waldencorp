@@ -175,7 +175,7 @@ header{padding-left:max(5vw,env(safe-area-inset-left));padding-right:max(5vw,env
 @media(max-width:560px){.fg{grid-template-columns:1fr}.fl{flex-direction:column}.fl a{margin:0 14px 0 0}.hero .btn,.er .btn{display:block;text-align:center;margin-right:0}.c{padding:22px}.chips a,.chips span{font-size:.9rem;padding:8px 14px}.brand{font-size:1.05rem}.brand img{width:28px}.hero p{font-size:1.05rem}}
 @media(max-width:360px){body{font-size:1rem}.page{padding-top:96px}}
 @media(max-height:480px) and (orientation:landscape){.page{padding-top:80px}.hero{min-height:auto}.mk{max-width:120px}}
-@media(pointer:coarse){.ft a{padding:99px 0}.btn:hover{transform:none;box-shadow:none}}
+@media(pointer:coarse){.ft a{padding:8px 0;min-height:44px}.btn:hover{transform:none;box-shadow:none}}
 /* transition : quatre éclats du W balayent l'écran */
 #cur{position:fixed;inset:0;z-index:90;pointer-events:none;display:flex}
 #cur i{flex:1;background:var(--navy);transform:translateY(-101%);transition:transform .45s cubic-bezier(.7,0,.2,1)}
@@ -415,6 +415,7 @@ function show(){
   });
   const titles = {'':'Développement logiciel sur mesure, SaaS et IA','solutions':'Solutions logicielles','services':'Services de développement logiciel','methode':'Notre méthode de développement','vision':'Vision et valeurs','contact':'Contact','legal':'Informations légales'};
   document.title = (key === '404' ? 'Page introuvable' : titles[r] || titles[key] || titles['']) + ' | Walden Corp';
+  document.documentElement.lang = 'fr';
   const descriptions = {'':'Walden Corp conçoit des logiciels sur mesure, plateformes SaaS, applications web et solutions d’intelligence artificielle pour les entreprises.','solutions':'Découvrez les solutions logicielles Walden Corp : applications web, mobile et desktop, SaaS, CRM, ERP, IA et API.','services':'De la conception à la maintenance : architecture logicielle, développement full stack, UX/UI, sécurité et support.','methode':'Découvrez la méthode Walden Corp : cadrage, architecture, conception, développement, tests, déploiement et amélioration continue.','vision':'La mission, la vision et les valeurs de Walden Corp, entreprise de développement logiciel tournée vers la fiabilité et l’innovation.','contact':'Présentez votre projet logiciel à Walden Corp : développement sur mesure, SaaS, applications et solutions IA.'};
   let meta = document.querySelector('meta[name="description"]');
   if(meta) meta.content = descriptions[r] || descriptions[key] || descriptions[''];
