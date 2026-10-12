@@ -3,9 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Walden Corp — Des idées, livrées en logiciels</title>
+<title>Walden Corp | Développement logiciel sur mesure, SaaS et IA</title>
+<meta name="description" content="Walden Corp conçoit des logiciels sur mesure, plateformes SaaS, applications web et solutions d’intelligence artificielle pour les entreprises.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://waldencorp.vercel.app/">
+<meta name="theme-color" content="#EDF2FC">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Walden Corp">
+<meta property="og:title" content="Walden Corp | Développement logiciel sur mesure, SaaS et IA">
+<meta property="og:description" content="Walden Corp conçoit des logiciels sur mesure, plateformes SaaS, applications web et solutions d’intelligence artificielle pour les entreprises.">
+<meta property="og:url" content="https://waldencorp.vercel.app/">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Walden Corp | Développement logiciel sur mesure, SaaS et IA">
+<meta name="twitter:description" content="Walden Corp conçoit des logiciels sur mesure, plateformes SaaS, applications web et solutions d’intelligence artificielle pour les entreprises.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Walden Corp","url":"https://waldencorp.vercel.app/","description":"Développement logiciel sur mesure, applications et plateformes SaaS."}</script>
 <!-- Favicon -->
-<link rel="icon" href="favicon-blue.ico" type="image/x-icon">
+<link rel="icon" href="/favicon-blue.ico" type="image/x-icon">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -93,7 +107,7 @@ nav a:hover{background:var(--card)}nav a.on{background:var(--navy);color:var(--b
 .tl li{padding:0 0 22px 26px;position:relative;font-weight:500}
 .tl li:before{content:"";position:absolute;left:-11px;top:6px;width:19px;height:19px;border-radius:50%;background:var(--sun);border:3px solid var(--bg)}
 .tl li b{display:block;font:800 1.1rem var(--fd)}.tl li span{color:var(--mut);font-weight:400;font-size:.95rem}
-.chips{display:flex;flex-wrap:wrap;gap:10px}.chips span{padding:99px 18px;border-radius:99px;border:1.5px solid var(--line);background:var(--card);font-weight:500}
+.chips{display:flex;flex-wrap:wrap;gap:10px}.chips span{padding:9px 18px;border-radius:99px;border:1.5px solid var(--line);background:var(--card);font-weight:500}
 .chips span:hover{background:var(--sun);color:#0B1D42;transform:translateY(-3px)}
 .big{font:800 clamp(1.6rem,4vw,2.8rem)/1.15 var(--fd);max-width:24ch;margin:0 0 40px}
 form{display:grid;gap:14px;max-width:560px}
@@ -159,7 +173,7 @@ header{padding-left:max(5vw,env(safe-area-inset-left));padding-right:max(5vw,env
 @media(max-width:560px){.fg{grid-template-columns:1fr}.fl{flex-direction:column}.fl a{margin:0 14px 0 0}.hero .btn,.er .btn{display:block;text-align:center;margin-right:0}.c{padding:22px}.chips a,.chips span{font-size:.9rem;padding:8px 14px}.brand{font-size:1.05rem}.brand img{width:28px}.hero p{font-size:1.05rem}}
 @media(max-width:360px){body{font-size:1rem}.page{padding-top:96px}}
 @media(max-height:480px) and (orientation:landscape){.page{padding-top:80px}.hero{min-height:auto}.mk{max-width:120px}}
-@media(pointer:coarse){.ft a{padding:99px 0}.btn:hover{transform:none;box-shadow:none}}
+@media(pointer:coarse){.ft a{padding:10px 0;min-height:44px}.btn:hover{transform:none;box-shadow:none}}
 /* transition : quatre éclats du W balayent l'écran */
 #cur{position:fixed;inset:0;z-index:90;pointer-events:none;display:flex}
 #cur i{flex:1;background:var(--navy);transform:translateY(-101%);transition:transform .45s cubic-bezier(.7,0,.2,1)}
@@ -172,19 +186,33 @@ header{padding-left:max(5vw,env(safe-area-inset-left));padding-right:max(5vw,env
 .mb{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:28px 6px 28px 6px;padding:34px 30px;max-width:440px;width:100%;text-align:center;transform:translateY(24px) scale(.94);transition:transform .35s cubic-bezier(.3,1.5,.5,1)}.md.o .mb{transform:none}
 .mb svg{width:72px;height:72px;margin-bottom:14px}.mb circle{fill:var(--sun)}.mb path{fill:none;stroke:#0B1D42;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:40;stroke-dashoffset:40}.md.o .mb path{animation:ck .5s .25s forwards}@keyframes ck{to{stroke-dashoffset:0}}
 .mb p{margin:10px auto 24px}
+
+/* Footer responsive refinements — original themes and animations preserved */
+.ft{padding:clamp(34px,5vw,60px) clamp(16px,4vw,56px) calc(28px + env(safe-area-inset-bottom,0px));overflow-wrap:anywhere}
+.fg{grid-template-columns:minmax(0,1.35fr) repeat(3,minmax(0,1fr)) minmax(0,1.2fr);gap:clamp(16px,2.4vw,34px);align-items:start}
+.fg>*{min-width:0}.ft a,.fl a{overflow-wrap:anywhere;word-break:normal}
+.fn form{min-width:0;display:flex;flex-wrap:wrap;gap:8px}.fn input{flex:1 1 140px;min-width:0;width:100%}.fn button{min-height:44px}
+.fl{gap:12px 24px;align-items:flex-start}.fl>span{min-width:0;max-width:100%;overflow-wrap:anywhere}.fl>span:last-child{display:flex;flex-wrap:wrap;gap:4px 16px}
+@media(max-width:1100px){.fg{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 22px}.fb,.fn{grid-column:1/-1}}
+@media(max-width:680px){.ft{padding:32px 18px calc(24px + env(safe-area-inset-bottom,0px));margin-top:40px}.fg{grid-template-columns:minmax(0,1fr);gap:22px}.fb,.fn{grid-column:auto}.ft a{min-height:44px;padding:10px 0}.fn form{display:grid;grid-template-columns:minmax(0,1fr)}.fn input,.fn button{width:100%;min-width:0;min-height:48px}.fl{margin-top:24px;flex-direction:column;gap:12px}.fl>span:last-child{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%;gap:6px 16px}.fl a{min-height:44px;padding:10px 0}.hero .btn,.er .btn{width:100%;text-align:center;margin-right:0}}
+@media(max-width:360px){.ft{padding-left:14px;padding-right:14px}.fl>span:last-child{grid-template-columns:minmax(0,1fr)}}
+@media(max-height:520px) and (orientation:landscape) and (max-width:940px){.ft{padding-top:26px}.fg{grid-template-columns:repeat(2,minmax(0,1fr))}.fb,.fn{grid-column:1/-1}}
+@media(max-width:760px){header{flex-wrap:wrap;gap:8px}nav{order:3;flex:1 0 100%;width:100%;max-width:100%;overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start;scrollbar-width:none;overscroll-behavior-x:contain}nav::-webkit-scrollbar{display:none}nav a{flex:0 0 auto;white-space:nowrap}}
+@media(max-width:420px){nav a{font-size:.8rem;padding:8px 9px}.tg{min-width:44px;min-height:44px}}
+
 </style>
 </head>
-<body>
+<body data-route="">
 <canvas id="bg" aria-hidden="true"></canvas>
 <div id="cur"><i></i><i></i><i></i><i></i></div>
 <header>
-<a class="brand" href="#/" aria-label="Walden Corp, accueil">
+<a class="brand" href="/" aria-label="Walden Corp, accueil">
   <img src="Icon_Only_Blue-removebg.png" alt="Logo Walden Corp" class="light-logo">
   <img src="logo only bleu beige.png" alt="Logo Walden Corp" class="dark-logo">
   Walden Corp
 </a>
 <nav id="nav" aria-label="Navigation principale">
-<a href="#/">Accueil</a><a href="#/solutions">Solutions</a><a href="#/services">Services</a><a href="#/methode">Méthode</a><a href="#/vision">Vision</a><a href="#/contact">Contact</a></nav>
+<a href="/">Accueil</a><a href="/solutions/">Solutions</a><a href="/services/">Services</a><a href="/methode/">Méthode</a><a href="/vision/">Vision</a><a href="/contact/">Contact</a></nav>
 <button class="tg" id="tg" aria-label="Changer de thème">◐</button>
 </header>
 
@@ -193,9 +221,9 @@ header{padding-left:max(5vw,env(safe-area-inset-left));padding-right:max(5vw,env
 <div class="hero"><div>
 <h1 class="hl" id="hl">Vos idées deviennent des logiciels qui durent.</h1>
 <p>Walden Corp conçoit, développe et fait vivre des logiciels professionnels, avec l'ingénierie moderne et l'intelligence artificielle comme équipe.</p>
-<a class="btn" href="#/contact">Parler de votre projet</a> <a class="btn g" href="#/solutions">Voir ce que nous construisons</a></div>
+<a class="btn" href="/contact/">Parler de votre projet</a> <a class="btn g" href="/solutions/">Voir ce que nous construisons</a></div>
 <div class="mk"><svg class="mark" viewBox="180 360 900 560" role="img" aria-label="Logo Walden Corp"><polygon points="199,406 361,406 467,575 383,717"/><polygon class="s" points="517,558 612,710 494,902 402,747"/><polygon points="627,373 851,742 757,895 540,517"/><polygon points="885,404 1056,404 868,715 848,690 780,572"/></svg></div></div>
-<div class="strip" role="group" aria-label="Nos domaines"><div><a href="#/solutions/apps">Applications web</a><a href="#/solutions/saas">SaaS</a><a href="#/solutions/apps">Mobile</a><a href="#/solutions/ia">Intelligence artificielle</a><a href="#/solutions/api">API</a><a href="#/solutions/metiers">CRM &amp; ERP</a><a href="#/solutions/productivite">Automatisation</a><a href="#/solutions/design">Design systems</a><a href="#/solutions/apps" tabindex="-1" aria-hidden="true">Applications web</a><a href="#/solutions/saas" tabindex="-1" aria-hidden="true">SaaS</a><a href="#/solutions/apps" tabindex="-1" aria-hidden="true">Mobile</a><a href="#/solutions/ia" tabindex="-1" aria-hidden="true">Intelligence artificielle</a><a href="#/solutions/api" tabindex="-1" aria-hidden="true">API</a><a href="#/solutions/metiers" tabindex="-1" aria-hidden="true">CRM &amp; ERP</a><a href="#/solutions/productivite" tabindex="-1" aria-hidden="true">Automatisation</a><a href="#/solutions/design" tabindex="-1" aria-hidden="true">Design systems</a></div></div>
+<div class="strip" role="group" aria-label="Nos domaines"><div><a href="/solutions/#apps">Applications web</a><a href="/solutions/#saas">SaaS</a><a href="/solutions/#apps">Mobile</a><a href="/solutions/#ia">Intelligence artificielle</a><a href="/solutions/#api">API</a><a href="/solutions/#metiers">CRM &amp; ERP</a><a href="/solutions/#productivite">Automatisation</a><a href="/solutions/#design">Design systems</a><a href="/solutions/#apps" tabindex="-1" aria-hidden="true">Applications web</a><a href="/solutions/#saas" tabindex="-1" aria-hidden="true">SaaS</a><a href="/solutions/#apps" tabindex="-1" aria-hidden="true">Mobile</a><a href="/solutions/#ia" tabindex="-1" aria-hidden="true">Intelligence artificielle</a><a href="/solutions/#api" tabindex="-1" aria-hidden="true">API</a><a href="/solutions/#metiers" tabindex="-1" aria-hidden="true">CRM &amp; ERP</a><a href="/solutions/#productivite" tabindex="-1" aria-hidden="true">Automatisation</a><a href="/solutions/#design" tabindex="-1" aria-hidden="true">Design systems</a></div></div>
 <h2 class="rv">Ce qui nous distingue</h2>
 <div class="grid">
 <div class="c rv"><div class="ic">Q</div><h3>La qualité d'abord</h3><p>Performance, sécurité, accessibilité, maintenabilité : chaque logiciel est bâti pour évoluer pendant des années.</p></div>
@@ -203,7 +231,7 @@ header{padding-left:max(5vw,env(safe-area-inset-left));padding-right:max(5vw,env
 <div class="c rv"><div class="ic">1</div><h3>De l'idée au support</h3><p>Un seul interlocuteur du cadrage initial jusqu'à l'après mise en production.</p></div></div>
 <div class="split"><div><p class="big rv">Une technologie simple pour l'utilisateur, même quand elle est complexe à concevoir.</p></div>
 <div class="rv"><h3>Pour qui ?</h3><p style="margin:10px 0 18px">Des organisations qui veulent des solutions fiables et évolutives, ici comme sur les marchés internationaux.</p>
-<div class="chips"><a href="#/contact">Startups</a><a href="#/contact">PME</a><a href="#/contact">Grandes entreprises</a><a href="#/contact">Administrations</a><a href="#/contact">ONG</a><a href="#/contact">Éducation</a><a href="#/contact">Agences digitales</a><a href="#/contact">Indépendants</a></div></div></div>
+<div class="chips"><a href="/contact/">Startups</a><a href="/contact/">PME</a><a href="/contact/">Grandes entreprises</a><a href="/contact/">Administrations</a><a href="/contact/">ONG</a><a href="/contact/">Éducation</a><a href="/contact/">Agences digitales</a><a href="/contact/">Indépendants</a></div></div></div>
 </section>
 
 <section class="page" id="p-solutions">
@@ -224,10 +252,10 @@ header{padding-left:max(5vw,env(safe-area-inset-left));padding-right:max(5vw,env
 <h1 class="hl">Un accompagnement complet</h1>
 <p style="margin:24px 0 50px;font-size:1.15rem">Au-delà du code, nous vous suivons dans toute votre transformation numérique.</p>
 <div class="split" style="margin-top:0">
-<div class="rv" id="concevoir"><h3 style="margin-bottom:16px">Concevoir</h3><div class="chips"><a href="#/contact">Étude des besoins</a><a href="#/contact">Conception fonctionnelle</a><a href="#/contact">Architecture logicielle</a><a href="#/contact">UX/UI design</a><a href="#/contact">Conseil technologique</a></div></div>
-<div class="rv" id="construire"><h3 style="margin-bottom:16px">Construire</h3><div class="chips"><a href="#/contact">Développement full stack</a><a href="#/contact">Déploiement cloud</a><a href="#/contact">Intégration continue</a><a href="#/contact">Cybersécurité</a></div></div>
-<div class="rv" id="durer"><h3 style="margin-bottom:16px">Faire durer</h3><div class="chips"><a href="#/contact">Maintenance corrective et évolutive</a><a href="#/contact">Support technique</a><a href="#/contact">Optimisation des performances</a><a href="#/contact">Audit technique</a></div></div>
-<div class="rv" id="transmettre"><h3 style="margin-bottom:16px">Transmettre</h3><div class="chips"><a href="#/contact">Formation des équipes</a><a href="#/contact">Accompagnement stratégique</a></div></div></div>
+<div class="rv" id="concevoir"><h3 style="margin-bottom:16px">Concevoir</h3><div class="chips"><a href="/contact/">Étude des besoins</a><a href="/contact/">Conception fonctionnelle</a><a href="/contact/">Architecture logicielle</a><a href="/contact/">UX/UI design</a><a href="/contact/">Conseil technologique</a></div></div>
+<div class="rv" id="construire"><h3 style="margin-bottom:16px">Construire</h3><div class="chips"><a href="/contact/">Développement full stack</a><a href="/contact/">Déploiement cloud</a><a href="/contact/">Intégration continue</a><a href="/contact/">Cybersécurité</a></div></div>
+<div class="rv" id="durer"><h3 style="margin-bottom:16px">Faire durer</h3><div class="chips"><a href="/contact/">Maintenance corrective et évolutive</a><a href="/contact/">Support technique</a><a href="/contact/">Optimisation des performances</a><a href="/contact/">Audit technique</a></div></div>
+<div class="rv" id="transmettre"><h3 style="margin-bottom:16px">Transmettre</h3><div class="chips"><a href="/contact/">Formation des équipes</a><a href="/contact/">Accompagnement stratégique</a></div></div></div>
 </section>
 
 <section class="page" id="p-methode">
@@ -239,7 +267,7 @@ header{padding-left:max(5vw,env(safe-area-inset-left));padding-right:max(5vw,env
 <li class="rv"><b>Déployer</b><span>Mise en production maîtrisée.</span></li>
 <li class="rv"><b>Suivre, soutenir, améliorer</b><span>Le produit évolue avec vos usages.</span></li></ol>
 <div class="rv"><h3 style="margin-bottom:16px">Nos préférences, assumées</h3>
-<div class="chips"><a href="#/contact">La qualité plutôt que la quantité</a><a href="#/contact">La simplicité plutôt que la complexité</a><a href="#/contact">La maintenabilité plutôt que le rapide</a><a href="#/contact">L'automatisation plutôt que le répétitif</a><a href="#/contact">Les standards ouverts quand c'est pertinent</a><a href="#/contact">Une architecture qui grandit avec vous</a></div></div></div>
+<div class="chips"><a href="/contact/">La qualité plutôt que la quantité</a><a href="/contact/">La simplicité plutôt que la complexité</a><a href="/contact/">La maintenabilité plutôt que le rapide</a><a href="/contact/">L'automatisation plutôt que le répétitif</a><a href="/contact/">Les standards ouverts quand c'est pertinent</a><a href="/contact/">Une architecture qui grandit avec vous</a></div></div></div>
 </section>
 
 <section class="page" id="p-vision">
@@ -250,7 +278,7 @@ header{padding-left:max(5vw,env(safe-area-inset-left));padding-right:max(5vw,env
 <div class="c rv"><h3>Notre vision</h3><p>Devenir l'une des entreprises technologiques les plus innovantes au monde, reconnue pour ses logiciels B2B, ses plateformes SaaS et son automatisation intelligente.</p></div>
 <div class="c rv"><h3>Notre ambition</h3><p>Un portefeuille de produits reconnus, une plateforme de développement très automatisée et une équipe qui livre l'excellence rapidement.</p></div></div>
 <h2 style="margin-top:70px" class="rv" id="valeurs">Nos valeurs</h2>
-<div class="chips rv"><a href="#/contact">Excellence</a><a href="#/contact">Innovation</a><a href="#/contact">Intégrité</a><a href="#/contact">Professionnalisme</a><a href="#/contact">Fiabilité</a><a href="#/contact">Transparence</a><a href="#/contact">Collaboration</a><a href="#/contact">Respect des utilisateurs</a><a href="#/contact">Sécurité</a><a href="#/contact">Amélioration continue</a></div>
+<div class="chips rv"><a href="/contact/">Excellence</a><a href="/contact/">Innovation</a><a href="/contact/">Intégrité</a><a href="/contact/">Professionnalisme</a><a href="/contact/">Fiabilité</a><a href="/contact/">Transparence</a><a href="/contact/">Collaboration</a><a href="/contact/">Respect des utilisateurs</a><a href="/contact/">Sécurité</a><a href="/contact/">Amélioration continue</a></div>
 </section>
 
 <section class="page" id="p-contact">
@@ -268,8 +296,8 @@ header{padding-left:max(5vw,env(safe-area-inset-left));padding-right:max(5vw,env
 <section class="page" id="p-404"><div class="er"><div class="mk"><svg class="mark" viewBox="180 360 900 560" role="img" aria-label="Logo Walden Corp"><polygon points="199,406 361,406 467,575 383,717"/><polygon class="s" points="517,558 612,710 494,902 402,747"/><polygon points="627,373 851,742 757,895 540,517"/><polygon points="885,404 1056,404 868,715 848,690 780,572"/></svg></div>
 <div class="n404" aria-hidden="true">404</div><h1 class="hl" id="erh">Page introuvable</h1>
 <p id="erp" style="margin:20px 0 30px;font-size:1.15rem">Cette adresse n'existe pas ou a été déplacée. Rien de grave : repartons de l'accueil.</p>
-<a class="btn" id="erb" href="#/">Retour à l'accueil</a> <a class="btn g" href="#/contact">Nous contacter</a></div></section>
-<section class="page" id="p-confirme"><h1 class="hl">Abonnement confirmé</h1><p style="margin:24px 0 32px;font-size:1.15rem">Bienvenue chez Walden Corp ! Vous recevrez nos actualités produits et nos articles techniques. Vous pouvez vous désinscrire à tout moment.</p><a class="btn" href="#/">Retour à l'accueil</a></section>
+<a class="btn" id="erb" href="/">Retour à l'accueil</a> <a class="btn g" href="/contact/">Nous contacter</a></div></section>
+<section class="page" id="p-confirme"><h1 class="hl">Abonnement confirmé</h1><p style="margin:24px 0 32px;font-size:1.15rem">Bienvenue chez Walden Corp ! Vous recevrez nos actualités produits et nos articles techniques. Vous pouvez vous désinscrire à tout moment.</p><a class="btn" href="/">Retour à l'accueil</a></section>
 <section class="page lg" id="p-legal">
 <h1 class="hl">Informations légales</h1>
 <h2 id="mentions">Mentions légales</h2><p>Éditeur : Walden Corp. Fondateur : Arnold Menemene V. Forme juridique, capital, numéro d'immatriculation, siège social et directeur de la publication : à compléter. Hébergeur : à compléter.</p>
@@ -279,17 +307,17 @@ header{padding-left:max(5vw,env(safe-area-inset-left));padding-right:max(5vw,env
 </section>
 </main>
 <footer class="ft"><div class="fg">
-<div class="fb"><a class="brand" href="#/"><img src="logo only bleu beige.png" alt="Logo Walden Corp">Walden Corp</a>
+<div class="fb"><a class="brand" href="/"><img src="logo only bleu beige.png" alt="Logo Walden Corp">Walden Corp</a>
 <p style="margin-top:14px">Software Factory moderne : logiciels professionnels, IA et automatisation.</p>
 <p style="margin-top:8px; font-weight: 500; color: var(--sun);">Fondé par Arnold Menemene V.</p>
 <p class="fq">Transformer des idées en produits numériques performants.</p></div>
-<div><h4>Solutions</h4><a href="#/solutions/apps">Applications web, mobile, desktop</a><a href="#/solutions/saas">Plateformes SaaS</a><a href="#/solutions/metiers">Logiciels métiers, CRM &amp; ERP</a><a href="#/solutions/ia">Solutions IA</a><a href="#/solutions/api">API &amp; services cloud</a><a href="#/solutions/portails">E-commerce et portails</a></div>
-<div><h4>Services</h4><a href="#/services/concevoir">Étude des besoins</a><a href="#/services/concevoir">Architecture et UX/UI</a><a href="#/services/construire">Développement full stack</a><a href="#/services/construire">Cybersécurité et audit</a><a href="#/services/durer">Maintenance et support</a><a href="#/services/transmettre">Formation et conseil</a></div>
-<div><h4>Entreprise</h4><a href="#/vision/mission">Mission et vision</a><a href="#/vision/valeurs">Nos valeurs</a><a href="#/methode">Notre méthode</a><a href="#/contact">Contact</a></div>
+<div><h4>Solutions</h4><a href="/solutions/#apps">Applications web, mobile, desktop</a><a href="/solutions/#saas">Plateformes SaaS</a><a href="/solutions/#metiers">Logiciels métiers, CRM &amp; ERP</a><a href="/solutions/#ia">Solutions IA</a><a href="/solutions/#api">API &amp; services cloud</a><a href="/solutions/#portails">E-commerce et portails</a></div>
+<div><h4>Services</h4><a href="/services/#concevoir">Étude des besoins</a><a href="/services/#concevoir">Architecture et UX/UI</a><a href="/services/#construire">Développement full stack</a><a href="/services/#construire">Cybersécurité et audit</a><a href="/services/#durer">Maintenance et support</a><a href="/services/#transmettre">Formation et conseil</a></div>
+<div><h4>Entreprise</h4><a href="/vision/#mission">Mission et vision</a><a href="/vision/#valeurs">Nos valeurs</a><a href="/methode/">Notre méthode</a><a href="/contact/">Contact</a></div>
 <div class="fn"><h4>Restez informé</h4><p>Actualités produits et articles techniques.</p>
-<form id="nl" novalidate><label class="sr" for="nle">Adresse e-mail</label><input id="nle" type="email" required placeholder="vous@entreprise.com" autocomplete="email" aria-describedby="nls"><button class="btn" type="submit">S'abonner</button></form><p class="fc">En vous abonnant, vous acceptez notre <a href="#/legal/confidentialite">politique de confidentialité</a>. Désinscription possible à tout moment.</p><p id="nls" role="status" aria-live="polite"></p>
+<form id="nl" novalidate><label class="sr" for="nle">Adresse e-mail</label><input id="nle" type="email" required placeholder="vous@entreprise.com" autocomplete="email" aria-describedby="nls"><button class="btn" type="submit">S'abonner</button></form><p class="fc">En vous abonnant, vous acceptez notre <a href="/legal/#confidentialite">politique de confidentialité</a>. Désinscription possible à tout moment.</p><p id="nls" role="status" aria-live="polite"></p>
 <p style="margin-top:14px"><a href="mailto:contact@waldencorp.com">contact@waldencorp.com</a></p></div></div>
-<div class="fl"><span>© 2026 Walden Corp. Tous droits réservés.</span><span><a href="#/legal/mentions">Mentions légales</a> <a href="#/legal/confidentialite">Confidentialité</a> <a href="#/legal/cookies">Cookies</a> <a href="#/legal/accessibilite">Accessibilité</a></span></div></footer>
+<div class="fl"><span>© 2026 Walden Corp. Tous droits réservés.</span><span><a href="/legal/#mentions">Mentions légales</a> <a href="/legal/#confidentialite">Confidentialité</a> <a href="/legal/#cookies">Cookies</a> <a href="/legal/#accessibilite">Accessibilité</a></span></div></footer>
 
 <div class="md" id="md" hidden role="dialog" aria-modal="true" aria-labelledby="mdt"><div class="mb"><svg viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="34"/><path d="M22 37l10 10 19-21"/></svg><h3 id="mdt"></h3><p id="mdp"></p><button class="btn" id="mdb" type="button">Fermer</button></div></div>
 <script>
@@ -298,29 +326,26 @@ let busy=false,io;
 function split(h){if(h.dataset.s)return;h.dataset.s=1;const t=h.textContent;h.textContent='';t.split(' ').forEach((w,i)=>{const s=document.createElement('span');s.textContent=w;s.style.animationDelay=(.25+i*.07)+'s';h.append(s,' ')})}
 const T={solutions:'Solutions',services:'Services',methode:'Méthode',vision:'Vision',contact:'Contact',legal:'Informations légales',confirme:'Abonnement confirmé'};
 function show(){
-  const seg=location.hash.replace(/^#\/?/,'').split('/'),r=seg[0];
-  const id=r===''?'p-':Object.hasOwn(T,r)?'p-'+r:'p-404',p=document.getElementById(id);
+  const path=location.pathname.replace(/\\/+$/,'')||'/';
+  const map={'/':'','/solutions':'solutions','/services':'services','/methode':'methode','/vision':'vision','/contact':'contact','/legal':'legal'};
+  const r=map[path]!==undefined?map[path]:(location.hash.replace(/^#\\/?/,'').split('/')[0]||'');
+  const seg=location.hash.replace(/^#\\/?/,'').split('/');
+  const id=r===''?'p-':Object.hasOwn(T,r)?'p-'+r:'p-404',p=document.getElementById(id)||document.getElementById('p-404');
   pages.forEach(x=>x.classList.toggle('on',x===p));
-  document.querySelectorAll('#nav a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#/'+r));
-  document.title=(id==='p-404'?'Page introuvable':T[r]||'')+(id==='p-'&&!T[r]?'':' — ')+'Walden Corp';
+  document.querySelectorAll('#nav a').forEach(a=>{const u=new URL(a.href,location.origin).pathname.replace(/\\/+$/,'')||'/';a.classList.toggle('on',u===path)});
+  document.title="Walden Corp | Développement logiciel sur mesure, SaaS et IA";
   p.querySelectorAll('.hl').forEach(h=>{h.dataset.s='';split(h)});
   io&&io.disconnect();
-  io=new IntersectionObserver(es=>es.forEach(e=>{
-    if(e.isIntersecting){
-      e.target.classList.add('v');
-    } else {
-      e.target.classList.remove('v');
-    }
-  }),{threshold:.15});
-  document.querySelectorAll('.rv').forEach(e=>{io.observe(e)});
-  const a=seg[1]&&document.getElementById(seg[1]);
-  if(a){requestAnimationFrame(()=>{a.scrollIntoView({behavior:'smooth',block:'center'});a.classList.add('hit');setTimeout(()=>a.classList.remove('hit'),1800)})}else window.scrollTo(0,0);
+  io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v');else e.target.classList.remove('v')}),{threshold:.15});
+  p.querySelectorAll('.rv').forEach(e=>io.observe(e));
+  const an=location.hash.startsWith('#/')?seg[1]:location.hash.slice(1),el=an&&document.getElementById(an);
+  if(el)requestAnimationFrame(()=>{el.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'});el.classList.add('hit');setTimeout(()=>el.classList.remove('hit'),1800)});else window.scrollTo(0,0);
 }
 function go(){
   if(busy)return;busy=true;cur.className='in';
   setTimeout(()=>{show();cur.className='out';setTimeout(()=>{cur.className='';busy=false},650)},650);
 }
-addEventListener('hashchange',go);
+addEventListener('hashchange',go);addEventListener('pageshow',show);
 const API={url:'',key:''};
 const md=document.getElementById('md');let mdF;
 function pop(t,p){document.getElementById('mdt').textContent=t;document.getElementById('mdp').textContent=p;mdF=document.activeElement;md.hidden=false;requestAnimationFrame(()=>md.classList.add('o'));document.getElementById('mdb').focus()}
@@ -355,13 +380,18 @@ addEventListener('error',e=>{if(e.error)fail()});addEventListener('unhandledreje
 /* La clé « publishable » est publique par conception : la sécurité repose sur la base (RLS + fonctions RPC), pas sur le secret de cette clé. */
 const SB_URL='https://awjfvhuadvdfpwkmlbvm.supabase.co',SB_KEY='sb_publishable_-eEcM_78MVNaek_LXzF1WQ_dkjiEuDe';
 async function rpc(fn,args){const r=await fetch(SB_URL+'/rest/v1/rpc/'+fn,{method:'POST',headers:{'Content-Type':'application/json',apikey:SB_KEY},body:JSON.stringify(args)});if(!r.ok){const j=await r.json().catch(()=>({}));throw new Error(j.message||r.status)}}
-document.getElementById('f').onsubmit=async e=>{e.preventDefault();const f=e.target,b=f.querySelector('button');b.disabled=true;b.textContent='Envoi en cours…';
+const contactForm=document.getElementById('f');if(contactForm)contactForm.onsubmit=async e=>{e.preventDefault();const f=e.target,b=f.querySelector('button');b.disabled=true;b.textContent='Envoi en cours…';
 try{await rpc('submit_contact',{p_name:f.n.value,p_email:f.e.value,p_type:f.t.value,p_message:f.m.value});
 pop('Message enregistré','Merci '+f.n.value.trim().split(' ')[0]+' ! Votre demande a bien été reçue, nous revenons vers vous rapidement.');f.reset()}
 catch(err){pop('Envoi impossible',/rate_limited/.test(err.message)?'Trop de messages envoyés. Réessayez dans quelques minutes.':"Votre message n'a pas pu être enregistré. Écrivez-nous à contact@waldencorp.com.")}
 b.disabled=false;b.textContent='Envoyer le message'};
-document.getElementById('nl').onsubmit=async e=>{e.preventDefault();const i=e.target.querySelector('input'),b=e.target.querySelector('button');
+const newsletterForm=document.getElementById('nl');if(newsletterForm)newsletterForm.onsubmit=async e=>{e.preventDefault();const i=e.target.querySelector('input'),b=e.target.querySelector('button');
 if(!i.value||!i.checkValidity()){pop('Adresse invalide','Veuillez saisir une adresse e-mail valide.');i.focus();return}
 b.disabled=true;
 try{await rpc('subscribe_newsletter',{p_email:i.value});pop('Inscription réussie','Merci ! Votre adresse a été ajoutée à notre liste de diffusion.');i.value=''}
 catch{pop('Erreur',"Impossible de valider l'inscription. Réessayez dans un instant.")}
+b.disabled=false;
+};
+</script>
+</body>
+</html>
