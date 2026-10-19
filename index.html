@@ -302,6 +302,11 @@ let busy=false,io;
 function split(h){if(h.dataset.s)return;h.dataset.s=1;const t=h.textContent;h.textContent='';t.split(' ').forEach((w,i)=>{const s=document.createElement('span');s.textContent=w;s.style.animationDelay=(.25+i*.07)+'s';h.append(s,' ')})}
 const T={solutions:'Solutions',services:'Services',methode:'Méthode',vision:'Vision',contact:'Contact',legal:'Informations légales',confirme:'Abonnement confirmé'};
 function show(){
+  // Compatibilité avec les anciens liens en #/ : les convertir vers les URL propres.
+  if(location.hash.startsWith('#/')){
+    const legacyPath=location.hash.slice(1);
+    history.replaceState(null,'',legacyPath);
+  }
   const cleanPath=decodeURIComponent(location.pathname).replace(/^\/+|\/+$/g,'');
   const seg=cleanPath ? cleanPath.split('/') : [''],r=seg[0];
   const id=r===''?'p-':Object.hasOwn(T,r)?'p-'+r:'p-404',p=document.getElementById(id);
