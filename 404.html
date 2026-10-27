@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>try{const savedTheme=localStorage.getItem('wc-theme');document.documentElement.dataset.theme=(savedTheme==='light'||savedTheme==='dark')?savedTheme:'light'}catch(e){document.documentElement.dataset.theme='light'}</script>
 <meta name="robots" content="noindex, follow">
 <meta name="description" content="Cette adresse n'existe pas ou a été déplacée. Retrouvez votre chemin sur le site Walden Corp.">
 <meta name="theme-color" content="#EDF2FC">
@@ -83,7 +84,7 @@ footer a{color:inherit;text-decoration:none}footer a:hover{color:var(--ink)}
 <footer><span>© 2026 Walden Corp. Tous droits réservés.</span><a href="/">Retour au site</a></footer>
 <script>
 const root=document.documentElement;
-document.getElementById('tg').addEventListener('click',()=>{const dark=matchMedia('(prefers-color-scheme:dark)').matches;const current=root.dataset.theme||(dark?'dark':'light');root.dataset.theme=current==='dark'?'light':'dark'});
+document.getElementById('tg').addEventListener('click',()=>{const current=root.dataset.theme||'light';const next=current==='dark'?'light':'dark';root.dataset.theme=next;try{localStorage.setItem('wc-theme',next)}catch(e){}});
 (()=>{const c=document.getElementById('bg'),x=c.getContext('2d'),rm=matchMedia('(prefers-reduced-motion:reduce)').matches;let W,H,S,cols,rows,m={x:-999,y:-999};
 function size(){const d=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;c.width=W*d;c.height=H*d;x.setTransform(d,0,0,d,0,0);S=W<600?44:W<1100?52:60;cols=Math.ceil(W/S)+1;rows=Math.ceil(H/S)+1;if(rm)draw(0)}
 function draw(t){x.clearRect(0,0,W,H);const R=W<600?120:180,P=new Array(cols*rows);
