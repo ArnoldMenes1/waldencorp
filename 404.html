@@ -8,7 +8,7 @@
 <meta name="description" content="Cette adresse n'existe pas ou a été déplacée. Retrouvez votre chemin sur le site Walden Corp.">
 <meta name="theme-color" content="#EDF2FC">
 <title>Page introuvable — Walden Corp</title>
-<link rel="icon" href="favicon-blue.ico" type="image/x-icon">
+<link rel="icon" href="/favicon-blue.ico" type="image/x-icon">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -57,34 +57,62 @@ footer a{color:inherit;text-decoration:none}footer a:hover{color:var(--ink)}
 @media(max-width:560px){header{padding-top:calc(14px + env(safe-area-inset-top,0px))}.brand{font-size:1.05rem}.brand img{width:28px}main{padding-top:24px;padding-bottom:44px}.mk{max-width:100px}.n404{font-size:clamp(5rem,28vw,8rem)}.actions{flex-direction:column;align-items:stretch}.btn{text-align:center;width:100%}footer{flex-direction:column}}
 @media(max-height:520px) and (orientation:landscape){main{padding-top:12px;padding-bottom:20px}.er{padding:0}.mk{max-width:70px}.n404{font-size:5rem;margin-bottom:8px}.lead{margin:12px 0 16px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* Redesigned 404 hero — consistent with Walden Corp's visual system */
+.error-hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(280px,.95fr);gap:clamp(28px,6vw,90px);align-items:center;padding:clamp(22px,4vw,60px);border:1px solid var(--line);border-radius:30px 8px 30px 8px;background:var(--card);overflow:hidden;position:relative;width:100%}
+.error-copy{min-width:0;position:relative;z-index:2}.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--sky);font-size:.82rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;margin-bottom:22px}.status-dot{width:8px;height:8px;border-radius:50%;background:var(--sun);box-shadow:0 0 0 5px color-mix(in srgb,var(--sun) 20%,transparent)}
+.error-title-row{display:flex;align-items:center;gap:clamp(10px,2vw,24px);margin:4px 0 18px}.n404{font-size:clamp(5rem,12vw,10rem);letter-spacing:-.08em;margin:0;white-space:nowrap}.n404 span{color:var(--sun);-webkit-text-stroke:0}
+.error-logo{width:clamp(66px,9vw,120px);flex:0 0 auto;transform:rotate(5deg);animation:logo-float 5s ease-in-out infinite}.error-logo svg{width:100%;height:auto;overflow:visible}.error-logo polygon{fill:var(--navy)}.error-logo polygon.s{fill:var(--sun)}
+.error-copy h1{font-size:clamp(2rem,4vw,3.7rem);line-height:1.04;max-width:15ch}.error-copy .lead{font-size:clamp(1.05rem,2.5vw,1.2rem);margin:18px 0 28px;max-width:45ch}
+.error-visual{position:relative;min-width:0;min-height:300px;display:grid;place-items:center;border-radius:22px 6px 22px 6px;background:color-mix(in srgb,var(--bg) 85%,var(--sky) 15%);overflow:hidden}.visual-grid{position:absolute;inset:0;background-image:linear-gradient(color-mix(in srgb,var(--sky) 12%,transparent) 1px,transparent 1px),linear-gradient(90deg,color-mix(in srgb,var(--sky) 12%,transparent) 1px,transparent 1px);background-size:24px 24px;mask-image:radial-gradient(ellipse,black,transparent 75%)}
+.error-visual svg{width:min(100%,390px);position:relative;overflow:visible}.wire{fill:none;stroke:var(--navy);stroke-width:5;stroke-linecap:round;stroke-dasharray:9 7}.plug rect{fill:var(--card);stroke:var(--navy);stroke-width:5}.plug path{fill:none;stroke:var(--navy);stroke-width:6;stroke-linecap:round}.plug-a{animation:plug-float 4s ease-in-out infinite}.plug-b{animation:plug-float 4s ease-in-out -2s infinite}.plug-b rect{fill:var(--sun)}.spark{fill:var(--sky)}.spark-line{fill:none;stroke:var(--sky);stroke-width:4;stroke-linecap:round}.visual-caption{position:absolute;bottom:16px;left:12px;right:12px;text-align:center;font-size:.8rem;font-weight:600;color:var(--mut)}
+@keyframes logo-float{50%{transform:translateY(-8px) rotate(-1deg)}}@keyframes plug-float{50%{transform:translateY(-7px) rotate(-2deg)}}
+@media(max-width:900px){main{align-items:flex-start}.error-hero{grid-template-columns:minmax(0,1fr);gap:26px}.error-visual{min-height:250px}.error-visual svg{max-width:330px}.n404{font-size:clamp(5.5rem,18vw,9rem)}}
+@media(max-width:560px){.error-hero{padding:22px 18px;gap:22px}.error-title-row{gap:12px}.n404{font-size:clamp(5rem,25vw,8rem);-webkit-text-stroke-width:1.5px}.error-logo{width:clamp(56px,18vw,90px)}.error-copy h1{font-size:clamp(2rem,8vw,3rem)}.error-visual{min-height:220px}.actions{display:grid;grid-template-columns:minmax(0,1fr)}.actions .btn{width:100%;margin:0}}
+@media(max-width:360px){.error-hero{padding:12px}.error-title-row{gap:8px}.n404{font-size:4.5rem}.error-logo{width:52px}.error-visual{min-height:185px}}
+@media(max-height:520px) and (orientation:landscape){main{padding-top:12px;padding-bottom:20px}.error-hero{padding:20px}.error-visual{min-height:190px}}
+@media(prefers-reduced-motion:reduce){.error-logo,.plug-a,.plug-b{animation:none!important}}
+
+/* Logo de marque réel à côté du code 404 */
+.error-logo{display:grid;place-items:center;animation:logo-float 5s ease-in-out infinite}
+.error-logo img{display:block;width:100%;max-width:120px;height:auto;object-fit:contain}
+.dark-error-logo{display:none!important}
+:root[data-theme="dark"] .light-error-logo{display:none!important}
+:root[data-theme="dark"] .dark-error-logo{display:block!important}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .light-error-logo{display:none!important}:root:not([data-theme="light"]) .dark-error-logo{display:block!important}}
+footer{gap:12px 24px;line-height:1.7}
+footer span,footer a{min-width:0}
+@media(max-width:560px){footer{align-items:flex-start;gap:12px;padding:20px 20px calc(20px + env(safe-area-inset-bottom,0px))}footer span,footer a{display:block}main{padding-left:20px;padding-right:20px}}
+@media(max-width:360px){main{padding-left:14px;padding-right:14px}.error-hero{padding:14px}.error-title-row{gap:8px}.error-logo{width:48px}}
+
 </style>
 </head>
 <body>
 <canvas id="bg" aria-hidden="true"></canvas>
 <header>
 <a class="brand" href="/" aria-label="Walden Corp, accueil">
-<img src="Icon_Only_Blue-removebg.png" alt="" class="light-logo">
-<img src="logo only bleu beige.png" alt="" class="dark-logo">
+<img src="/Icon_Only_Blue-removebg.png" alt="" class="light-logo">
+<img src="/logo%20only%20bleu%20beige.png" alt="" class="dark-logo">
 <span>Walden Corp</span>
 </a>
 <button class="tg" id="tg" type="button" aria-label="Changer de thème" title="Changer de thème">◐</button>
 </header>
 <main>
-<section class="er" aria-labelledby="erh">
-<div class="mk" aria-hidden="true"><svg class="mark" viewBox="180 360 900 560"><polygon points="199,406 361,406 467,575 383,717"/><polygon class="s" points="517,558 612,710 494,902 402,747"/><polygon points="627,373 851,742 757,895 540,517"/><polygon points="885,404 1056,404 868,715 848,690 780,572"/></svg></div>
-<div class="n404" aria-hidden="true">404</div>
-<h1 id="erh">Page introuvable</h1>
-<p class="lead">Cette adresse n'existe pas ou a été déplacée. Rien de grave : repartons de l'accueil.</p>
-<div class="actions">
-<a class="btn" href="/">Retour à l'accueil</a>
-<a class="btn g" href="mailto:contact@waldencorp.com">Nous contacter</a>
-</div>
-</section>
+<section class="er" aria-labelledby="erh"><div class="error-hero">
+<div class="error-copy"><span class="eyebrow"><span class="status-dot"></span> Itinéraire introuvable</span>
+<div class="error-title-row"><div class="n404" aria-hidden="true">404<span>.</span></div><div class="error-logo" aria-label="Logo Walden Corp"><img class="light-error-logo" src="/Icon_Only_Blue-removebg.png" alt=""><img class="dark-error-logo" src="/logo%20only%20bleu%20beige.png" alt=""></div></div>
+<h1 id="erh">Cette page a pris un autre chemin.</h1>
+<p class="lead">L’adresse demandée n’est pas disponible. Pas de panique : revenons vers une destination connue.</p>
+<div class="actions"><a class="btn" href="/"><svg viewBox="0 0 24 24" aria-hidden="true" style="width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.8"><path d="m3 10 9-7 9 7M5 9v12h14V9M9 21v-7h6v7"/></svg> Retour à l’accueil</a><a class="btn g" href="/contact/"><svg viewBox="0 0 24 24" aria-hidden="true" style="width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.8"><path d="M4 5h16v14H4zM4 7l8 6 8-6"/></svg> Nous contacter</a></div></div>
+<div class="error-visual" aria-hidden="true"><div class="visual-grid"></div><svg viewBox="0 0 420 300"><path class="wire" d="M4 226C65 226 50 170 106 170S163 233 217 177 269 88 309 105"/><g class="plug plug-a"><rect x="102" y="115" width="78" height="91" rx="22"/><path d="M125 115V87m31 28V87"/><path d="M127 156h29"/></g><g class="plug plug-b"><rect x="250" y="70" width="78" height="91" rx="22"/><path d="M273 70V42m31 28V42"/><path d="M275 111h29"/></g><circle class="spark" cx="340" cy="56" r="5"/><circle class="spark" cx="358" cy="91" r="3"/><path class="spark-line" d="m350 24 7-12m20 40 14-3m-18 42 12 9"/></svg><p class="visual-caption">Même les bons systèmes ont parfois une route manquante.</p></div>
+</div></section>
 </main>
 <footer><span>© 2026 Walden Corp. Tous droits réservés.</span><a href="/">Retour au site</a></footer>
 <script>
 const root=document.documentElement;
-document.getElementById('tg').addEventListener('click',()=>{const current=root.dataset.theme||'light';const next=current==='dark'?'light':'dark';root.dataset.theme=next;try{localStorage.setItem('wc-theme',next)}catch(e){}});
+function setTheme(theme){if(theme!=='light'&&theme!=='dark')return;root.dataset.theme=theme;try{localStorage.setItem('wc-theme',theme)}catch(e){}}
+document.getElementById('tg').addEventListener('click',()=>setTheme(root.dataset.theme==='dark'?'light':'dark'));
+addEventListener('storage',e=>{if(e.key==='wc-theme'&&(e.newValue==='light'||e.newValue==='dark'))root.dataset.theme=e.newValue});
 (()=>{const c=document.getElementById('bg'),x=c.getContext('2d'),rm=matchMedia('(prefers-reduced-motion:reduce)').matches;let W,H,S,cols,rows,m={x:-999,y:-999};
 function size(){const d=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;c.width=W*d;c.height=H*d;x.setTransform(d,0,0,d,0,0);S=W<600?44:W<1100?52:60;cols=Math.ceil(W/S)+1;rows=Math.ceil(H/S)+1;if(rm)draw(0)}
 function draw(t){x.clearRect(0,0,W,H);const R=W<600?120:180,P=new Array(cols*rows);
