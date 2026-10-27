@@ -361,8 +361,8 @@ function pop(t,p){document.getElementById('mdt').textContent=t;document.getEleme
 function unpop(){md.classList.remove('o');setTimeout(()=>{md.hidden=true;mdF&&mdF.focus&&mdF.focus()},250)}
 md.onclick=e=>{if(e.target===md||e.target.id==='mdb')unpop()};addEventListener('keydown',e=>{if(e.key==='Escape'&&!md.hidden)unpop()});
 show();
-// Révèle la page sous les bandes après une navigation interne.
-try{if(sessionStorage.getItem('wc-nav-transition')==='1'){sessionStorage.removeItem('wc-nav-transition');cur.className='in';requestAnimationFrame(()=>setTimeout(()=>{cur.className='out';setTimeout(()=>{cur.className=''},CURTAIN_REVEAL_MS)},40))}}catch(e){}
+// À l'arrivée, on garde les bandes fermées jusqu'à la fin de leur couverture, puis on révèle la nouvelle page.
+try{if(sessionStorage.getItem('wc-nav-transition')==='1'){sessionStorage.removeItem('wc-nav-transition');cur.className='in';setTimeout(()=>{cur.className='out';setTimeout(()=>{cur.className=''},CURTAIN_REVEAL_MS)},CURTAIN_COVER_MS)}}catch(e){}
 // Les navigations entre pages passent par le rideau à quatre bandes.
 document.addEventListener('click',e=>{const a=e.target.closest('a[href]');if(!a||e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||a.target==='_blank'||a.hasAttribute('download'))return;const u=new URL(a.href,location.href);if(u.origin!==location.origin||u.pathname===location.pathname||a.href.startsWith('mailto:')||a.href.startsWith('tel:'))return;e.preventDefault();if(busy)return;busy=true;cur.className='in';try{sessionStorage.setItem('wc-nav-transition','1')}catch(e){};setTimeout(()=>{location.href=u.href},CURTAIN_COVER_MS)});
 document.getElementById('tg').onclick=()=>{const d=document.documentElement,dk=matchMedia('(prefers-color-scheme:dark)').matches;const now=d.dataset.theme||(dk?'dark':'light');const next=now==='dark'?'light':'dark';d.dataset.theme=next;try{localStorage.setItem('wc-theme',next)}catch(e){}};
