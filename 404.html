@@ -72,6 +72,19 @@ footer a{color:inherit;text-decoration:none}footer a:hover{color:var(--ink)}
 @media(max-width:360px){.error-hero{padding:12px}.error-title-row{gap:8px}.n404{font-size:4.5rem}.error-logo{width:52px}.error-visual{min-height:185px}}
 @media(max-height:520px) and (orientation:landscape){main{padding-top:12px;padding-bottom:20px}.error-hero{padding:20px}.error-visual{min-height:190px}}
 @media(prefers-reduced-motion:reduce){.error-logo,.plug-a,.plug-b{animation:none!important}}
+
+/* Logo de marque réel à côté du code 404 */
+.error-logo{display:grid;place-items:center;animation:logo-float 5s ease-in-out infinite}
+.error-logo img{display:block;width:100%;max-width:120px;height:auto;object-fit:contain}
+.dark-error-logo{display:none!important}
+:root[data-theme="dark"] .light-error-logo{display:none!important}
+:root[data-theme="dark"] .dark-error-logo{display:block!important}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .light-error-logo{display:none!important}:root:not([data-theme="light"]) .dark-error-logo{display:block!important}}
+footer{gap:12px 24px;line-height:1.7}
+footer span,footer a{min-width:0}
+@media(max-width:560px){footer{align-items:flex-start;gap:12px;padding:20px 20px calc(20px + env(safe-area-inset-bottom,0px))}footer span,footer a{display:block}main{padding-left:20px;padding-right:20px}}
+@media(max-width:360px){main{padding-left:14px;padding-right:14px}.error-hero{padding:14px}.error-title-row{gap:8px}.error-logo{width:48px}}
+
 </style>
 </head>
 <body>
@@ -87,7 +100,7 @@ footer a{color:inherit;text-decoration:none}footer a:hover{color:var(--ink)}
 <main>
 <section class="er" aria-labelledby="erh"><div class="error-hero">
 <div class="error-copy"><span class="eyebrow"><span class="status-dot"></span> Itinéraire introuvable</span>
-<div class="error-title-row"><div class="n404" aria-hidden="true">404<span>.</span></div><div class="error-logo" aria-label="Logo Walden Corp"><svg viewBox="0 0 180 150" role="img"><polygon points="8,12 61,12 95,67 68,113"/><polygon class="s" points="111,62 143,112 105,143 77,88"/><polygon points="75,3 146,115 117,144 47,47"/><polygon points="137,14 174,14 115,100 102,80"/></svg></div></div>
+<div class="error-title-row"><div class="n404" aria-hidden="true">404<span>.</span></div><div class="error-logo" aria-label="Logo Walden Corp"><img class="light-error-logo" src="/Icon_Only_Blue-removebg.png" alt=""><img class="dark-error-logo" src="/logo%20only%20bleu%20beige.png" alt=""></div></div>
 <h1 id="erh">Cette page a pris un autre chemin.</h1>
 <p class="lead">L’adresse demandée n’est pas disponible. Pas de panique : revenons vers une destination connue.</p>
 <div class="actions"><a class="btn" href="/"><svg viewBox="0 0 24 24" aria-hidden="true" style="width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.8"><path d="m3 10 9-7 9 7M5 9v12h14V9M9 21v-7h6v7"/></svg> Retour à l’accueil</a><a class="btn g" href="/contact/"><svg viewBox="0 0 24 24" aria-hidden="true" style="width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.8"><path d="M4 5h16v14H4zM4 7l8 6 8-6"/></svg> Nous contacter</a></div></div>
