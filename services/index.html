@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<script>try{const savedTheme=localStorage.getItem('wc-theme');if(savedTheme==='light'||savedTheme==='dark')document.documentElement.dataset.theme=savedTheme}catch(e){}</script>
+<script>try{const savedTheme=localStorage.getItem('wc-theme');document.documentElement.dataset.theme=(savedTheme==='light'||savedTheme==='dark')?savedTheme:'light'}catch(e){document.documentElement.dataset.theme='light'}</script>
 <title>Services de développement logiciel et architecture | Walden Corp</title>
 <meta name="description" content="Cadrage, architecture logicielle, UX/UI, développement, cybersécurité, maintenance et accompagnement technique.">
 <meta name="robots" content="index,follow,max-image-preview:large">
@@ -176,10 +176,10 @@ header{padding-left:max(5vw,env(safe-area-inset-left));padding-right:max(5vw,env
 @media(max-height:480px) and (orientation:landscape){.page{padding-top:80px}.hero{min-height:auto}.mk{max-width:120px}}
 @media(pointer:coarse){.ft a{padding:10px 0;min-height:44px}.btn:hover{transform:none;box-shadow:none}}
 /* transition : quatre éclats du W balayent l'écran */
-#cur{position:fixed;inset:0;z-index:90;pointer-events:none;display:flex}
-#cur i{flex:1;background:var(--navy);transform:translateY(-101%);transition:transform .45s cubic-bezier(.7,0,.2,1)}
-#cur i:nth-child(2){background:var(--sky);transition-delay:.05s}#cur i:nth-child(3){background:var(--sun);transition-delay:.1s}#cur i:nth-child(4){transition-delay:.15s}
-#cur.in i{transform:none}#cur.out i{transform:translateY(101%)}
+#cur{position:fixed;inset:0;z-index:90;pointer-events:none;display:flex;overflow:hidden}
+#cur i{flex:1;min-width:0;background:var(--navy);transform:translateY(-101%);transition:transform .42s cubic-bezier(.7,0,.2,1)}
+#cur i:nth-child(2){background:var(--sky);transition-delay:.07s}#cur i:nth-child(3){background:var(--sun);transition-delay:.14s}#cur i:nth-child(4){transition-delay:.21s}
+#cur.in i{transform:translateY(0)}#cur.out i{transform:translateY(101%)}
 .tg{background:0;border:1.5px solid var(--line);color:var(--ink);border-radius:99px;width:40px;height:40px;cursor:pointer;font-size:1.1rem}
 
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv,.hl span{opacity:1;transform:none}}
@@ -346,6 +346,8 @@ function go(){
   if(busy)return;busy=true;cur.className='in';
   setTimeout(()=>{show();cur.className='out';setTimeout(()=>{cur.className='';busy=false},650)},650);
 }
+const CURTAIN_COVER_MS=650;
+const CURTAIN_REVEAL_MS=700;
 addEventListener('hashchange',go);addEventListener('pageshow',show);
 const API={url:'',key:''};
 const md=document.getElementById('md');let mdF;
@@ -353,10 +355,10 @@ function pop(t,p){document.getElementById('mdt').textContent=t;document.getEleme
 function unpop(){md.classList.remove('o');setTimeout(()=>{md.hidden=true;mdF&&mdF.focus&&mdF.focus()},250)}
 md.onclick=e=>{if(e.target===md||e.target.id==='mdb')unpop()};addEventListener('keydown',e=>{if(e.key==='Escape'&&!md.hidden)unpop()});
 show();
-// Révèle la page sous les bandes après une navigation interne.
-try{if(sessionStorage.getItem('wc-nav-transition')==='1'){sessionStorage.removeItem('wc-nav-transition');cur.className='in';requestAnimationFrame(()=>setTimeout(()=>{cur.className='out';setTimeout(()=>{cur.className=''},520)},40))}}catch(e){}
+// À l'arrivée, on garde les bandes fermées jusqu'à la fin de leur couverture, puis on révèle la nouvelle page.
+try{if(sessionStorage.getItem('wc-nav-transition')==='1'){sessionStorage.removeItem('wc-nav-transition');cur.className='in';setTimeout(()=>{cur.className='out';setTimeout(()=>{cur.className=''},CURTAIN_REVEAL_MS)},CURTAIN_COVER_MS)}}catch(e){}
 // Les navigations entre pages passent par le rideau à quatre bandes.
-document.addEventListener('click',e=>{const a=e.target.closest('a[href]');if(!a||e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||a.target==='_blank'||a.hasAttribute('download'))return;const u=new URL(a.href,location.href);if(u.origin!==location.origin||u.pathname===location.pathname||a.href.startsWith('mailto:')||a.href.startsWith('tel:'))return;e.preventDefault();if(busy)return;busy=true;cur.className='in';try{sessionStorage.setItem('wc-nav-transition','1')}catch(e){};setTimeout(()=>{location.href=u.href},520)});
+document.addEventListener('click',e=>{const a=e.target.closest('a[href]');if(!a||e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||a.target==='_blank'||a.hasAttribute('download'))return;const u=new URL(a.href,location.href);if(u.origin!==location.origin||u.pathname===location.pathname||a.href.startsWith('mailto:')||a.href.startsWith('tel:'))return;e.preventDefault();if(busy)return;busy=true;cur.className='in';try{sessionStorage.setItem('wc-nav-transition','1')}catch(e){};setTimeout(()=>{location.href=u.href},CURTAIN_COVER_MS)});
 document.getElementById('tg').onclick=()=>{const d=document.documentElement,dk=matchMedia('(prefers-color-scheme:dark)').matches;const now=d.dataset.theme||(dk?'dark':'light');const next=now==='dark'?'light':'dark';d.dataset.theme=next;try{localStorage.setItem('wc-theme',next)}catch(e){}};
 (()=>{const c=document.getElementById('bg'),x=c.getContext('2d'),rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
 let W,H,S,cols,rows,m={x:-999,y:-999};
