@@ -23,6 +23,32 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px 24px;p
 @media(max-width:720px){header{padding:12px 18px}.hero{grid-template-columns:minmax(0,1fr);padding:clamp(18px,4vw,30px)}.hero h1{max-width:15ch;font-size:clamp(2.6rem,10vw,4rem)}.art-card{max-width:430px}.vision{grid-template-columns:minmax(0,1fr);gap:18px}.final-cta{align-items:stretch;flex-direction:column}.final-cta .btn{width:100%}}
 @media(max-width:440px){.hero{padding:16px}.principles{grid-template-columns:minmax(0,1fr);gap:14px}.principles>div{display:grid;grid-template-columns:100px minmax(0,1fr);gap:10px;align-items:start}.skill-grid{grid-template-columns:minmax(0,1fr)}.skill{padding:20px}.vision{padding:22px 18px}.final-cta{padding:22px 18px}.actions{display:grid;grid-template-columns:minmax(0,1fr)}.actions .btn{width:100%}.header-actions .text-link{font-size:.8rem;padding:7px 8px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+/* Motion system: quick navigation, gentle reveal, reduced-motion friendly */
+html{scroll-behavior:smooth}
+body{animation:wc-page-enter .22s cubic-bezier(.2,.7,.2,1) both}
+@keyframes wc-page-enter{from{opacity:.72;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+a,button{transition-duration:.16s!important}
+section,.hero,.skill,.art-card,.final-cta{transition-duration:.2s}
+.wc-reveal{opacity:0;transform:translateY(12px);transition:opacity .28s ease,transform .28s cubic-bezier(.2,.7,.2,1)}
+.wc-reveal.wc-visible{opacity:1;transform:translateY(0)}
+html.wc-leaving body{opacity:0;transform:translateY(-3px);transition:opacity .12s ease,transform .12s ease}
+@media(prefers-reduced-motion:reduce){body{animation:none!important}.wc-reveal{opacity:1;transform:none;transition:none!important}html.wc-leaving body{opacity:1;transform:none;transition:none!important}}
+
+
+/* Interactive geometric founder emblem */
+.art-card{perspective:900px}
+.illustration{transform-style:preserve-3d;transform-origin:50% 52%;transition:transform .22s cubic-bezier(.2,.7,.2,1),filter .22s ease;will-change:transform}
+.art-card:hover .illustration{filter:drop-shadow(0 10px 14px color-mix(in srgb,var(--ink) 12%,transparent))}
+.art-card:focus-within .illustration{filter:drop-shadow(0 10px 14px color-mix(in srgb,var(--ink) 12%,transparent))}
+.illustration .orbit{transform-origin:210px 210px;animation:wc-orbit-turn 28s linear infinite}
+.illustration .dashed{animation-duration:18s;animation-direction:reverse}
+.art-card:hover .illustration .orbit{animation-duration:9s}
+.art-card .art-caption{transition:transform .2s ease}
+.art-card:hover .art-caption{transform:translateX(3px)}
+@keyframes wc-orbit-turn{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.illustration,.art-card .art-caption{transition:none!important}.illustration .orbit{animation:none!important}}
+
 </style>
 </head>
 <body>
@@ -63,4 +89,53 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px 24px;p
 document.getElementById('theme-toggle').addEventListener('click',()=>{const t=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=t;try{localStorage.setItem('wc-theme',t)}catch(e){}});
 addEventListener('storage',e=>{if(e.key==='wc-theme'&&(e.newValue==='light'||e.newValue==='dark'))document.documentElement.dataset.theme=e.newValue});
 </script>
+
+<script>
+(()=> {
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const sameSiteLink = (a) => {
+    if (!a || !a.href || a.target === '_blank' || a.hasAttribute('download')) return false;
+    try { const u = new URL(a.href, location.href); return u.origin === location.origin && !a.hash.startsWith('#') && !a.pathname.startsWith('/api/'); } catch (_) { return false; }
+  };
+  if (!reduce) {
+    document.querySelectorAll('main > section, main > .hero, main > .section, main > article').forEach((el) => {
+      el.classList.add('wc-reveal');
+    });
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => entries.forEach((entry) => {
+        if (entry.isIntersecting) { entry.target.classList.add('wc-visible'); io.unobserve(entry.target); }
+      }), {threshold: 0.08, rootMargin: '0px 0px -24px 0px'});
+      document.querySelectorAll('.wc-reveal').forEach((el) => io.observe(el));
+    } else document.querySelectorAll('.wc-reveal').forEach(el => el.classList.add('wc-visible'));
+    document.addEventListener('click', (event) => {
+      const a = event.target.closest('a');
+      if (!a || !sameSiteLink(a) || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      const url = new URL(a.href, location.href);
+      if (url.pathname === location.pathname && url.search === location.search) return;
+      event.preventDefault();
+      document.documentElement.classList.add('wc-leaving');
+      window.setTimeout(() => { location.href = a.href; }, 110);
+    });
+  }
+})();
+</script>
+
+
+<script>
+(()=> {
+ const card=document.querySelector('.art-card');
+ const art=document.querySelector('.illustration');
+ if(!card||!art||window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+ card.addEventListener('pointermove',(e)=>{
+   if(e.pointerType==='touch') return;
+   const r=card.getBoundingClientRect(), x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+   art.style.transform='rotateX('+(-y*5).toFixed(2)+'deg) rotateY('+(x*6).toFixed(2)+'deg) translateY(-2px)';
+ });
+ card.addEventListener('pointerleave',()=>{art.style.transform='';});
+ card.addEventListener('focusin',()=>{art.style.transform='translateY(-2px) scale(1.012)';});
+ card.addEventListener('focusout',()=>{art.style.transform='';});
+ card.addEventListener('click',()=>{art.animate([{transform:'scale(1)'},{transform:'scale(1.035)'},{transform:'scale(1)'}],{duration:260,easing:'ease-out'});});
+})();
+</script>
+
 </body></html>
