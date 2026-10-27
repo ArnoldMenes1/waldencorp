@@ -286,7 +286,7 @@ section,.hero,.skill,.art-card,.final-cta{transition-duration:.2s}
 html.wc-leaving body{opacity:0;transform:translateY(-3px);transition:opacity .12s ease,transform .12s ease}
 @media(prefers-reduced-motion:reduce){body{animation:none!important}.wc-reveal{opacity:1;transform:none;transition:none!important}html.wc-leaving body{opacity:1;transform:none;transition:none!important}}
 
-</style>
+\n/* Consentement newsletter lisible et utilisable au clavier */\n.nl-consent{display:flex;align-items:flex-start;gap:9px;margin:12px 0;font-size:.78rem;line-height:1.5;color:var(--muted)}.nl-consent input{flex:0 0 auto;width:16px;height:16px;margin-top:2px;accent-color:var(--sky)}.nl-consent a,.form-privacy a{text-decoration:underline;text-underline-offset:3px}\n</style>
 </head>
 <body data-route="contact">
 <canvas id="bg" aria-hidden="true"></canvas>
@@ -397,7 +397,7 @@ html.wc-leaving body{opacity:0;transform:translateY(-3px);transition:opacity .12
       <label for="contact-message">Votre message <span>*</span><textarea id="contact-message" name="m" rows="5" required placeholder="Parlez-nous de votre objectif, de vos utilisateurs et de ce que vous souhaitez améliorer…"></textarea></label>
       <button class="btn contact-submit" type="submit"><span>Envoyer ma demande</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
       <div id="ok" role="status">Message préparé dans votre messagerie. Il n'est envoyé qu'après validation de votre part.</div>
-      <p class="form-privacy"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> Vos informations sont utilisées uniquement pour répondre à votre demande.</p>
+      <p class="form-privacy"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> Vos informations servent à traiter votre demande. Consultez notre <a href="/legal/#confidentialite">page de confidentialité</a>. N’envoyez pas de données sensibles.</p><p class="form-privacy">Si le formulaire ne fonctionne pas, contactez-nous directement : <a href="mailto:contact@waldencorp.com">contact@waldencorp.com</a>.</p>
     </form>
   </div>
 </div>
@@ -431,7 +431,7 @@ html.wc-leaving body{opacity:0;transform:translateY(-3px);transition:opacity .12
 <div><h4>Services</h4><a href="/services/#concevoir">Étude des besoins</a><a href="/services/#concevoir">Architecture et UX/UI</a><a href="/services/#construire">Développement full stack</a><a href="/services/#construire">Cybersécurité et audit</a><a href="/services/#durer">Maintenance et support</a><a href="/services/#transmettre">Formation et conseil</a></div>
 <div><h4>Entreprise</h4><a href="/vision/#mission">Mission et vision</a><a href="/vision/#valeurs">Nos valeurs</a><a href="/methode/">Notre méthode</a><a href="/contact/">Contact</a></div>
 <div class="fn"><h4>Restez informé</h4><p>Actualités produits et articles techniques.</p>
-<form id="nl" novalidate><label class="sr" for="nle">Adresse e-mail</label><input id="nle" type="email" required placeholder="vous@entreprise.com" autocomplete="email" aria-describedby="nls"><button class="btn" type="submit">S'abonner</button></form><p class="fc">En vous abonnant, vous acceptez notre <a href="/legal/#confidentialite">politique de confidentialité</a>. Désinscription possible à tout moment.</p><p id="nls" role="status" aria-live="polite"></p>
+<form id="nl"><label class="sr" for="nle">Adresse e-mail</label><input id="nle" name="email" type="email" required placeholder="vous@entreprise.com" autocomplete="email" aria-describedby="nls"><label class="nl-consent" for="nl-consent"><input id="nl-consent" name="consent" type="checkbox" required><span>J’accepte que mon adresse soit utilisée pour recevoir les actualités Walden Corp. Je pourrai me désinscrire à tout moment. <a href="/legal/#confidentialite">Confidentialité</a>.</span></label><button class="btn" type="submit">S’abonner</button></form><p class="fc">Inscription uniquement avec votre accord. N’envoyez pas d’informations confidentielles.</p><p id="nls" role="status" aria-live="polite"></p>
 <p style="margin-top:14px"><a href="mailto:contact@waldencorp.com">contact@waldencorp.com</a></p></div></div>
 <div class="fl"><span>© 2026 Walden Corp. Tous droits réservés.</span><span><a href="/legal/#mentions">Mentions légales</a> <a href="/legal/#confidentialite">Confidentialité</a> <a href="/legal/#cookies">Cookies</a> <a href="/legal/#accessibilite">Accessibilité</a></span></div></footer>
 
