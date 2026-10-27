@@ -177,8 +177,8 @@ header{padding-left:max(5vw,env(safe-area-inset-left));padding-right:max(5vw,env
 @media(pointer:coarse){.ft a{padding:10px 0;min-height:44px}.btn:hover{transform:none;box-shadow:none}}
 /* transition : quatre éclats du W balayent l'écran */
 #cur{position:fixed;inset:0;z-index:90;pointer-events:none;display:flex}
-#cur i{flex:1;background:var(--navy);transform:translateY(-101%);transition:transform .45s cubic-bezier(.7,0,.2,1)}
-#cur i:nth-child(2){background:var(--sky);transition-delay:.05s}#cur i:nth-child(3){background:var(--sun);transition-delay:.1s}#cur i:nth-child(4){transition-delay:.15s}
+#cur i{flex:1;background:var(--navy);transform:translateY(-101%);transition:transform .42s cubic-bezier(.7,0,.2,1)}
+#cur i:nth-child(2){background:var(--sky);transition-delay:.07s}#cur i:nth-child(3){background:var(--sun);transition-delay:.14s}#cur i:nth-child(4){transition-delay:.21s}
 #cur.in i{transform:none}#cur.out i{transform:translateY(101%)}
 .tg{background:0;border:1.5px solid var(--line);color:var(--ink);border-radius:99px;width:40px;height:40px;cursor:pointer;font-size:1.1rem}
 
@@ -342,9 +342,17 @@ function show(){
   const an=location.hash.startsWith('#/')?seg[1]:location.hash.slice(1),el=an&&document.getElementById(an);
   if(el)requestAnimationFrame(()=>{el.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'});el.classList.add('hit');setTimeout(()=>el.classList.remove('hit'),1800)});else window.scrollTo(0,0);
 }
+const CURTAIN_COVER_MS=650;
+const CURTAIN_REVEAL_MS=700;
 function go(){
-  if(busy)return;busy=true;cur.className='in';
-  setTimeout(()=>{show();cur.className='out';setTimeout(()=>{cur.className='';busy=false},650)},650);
+  if(busy)return;
+  busy=true;
+  cur.className='in';
+  setTimeout(()=>{
+    show();
+    cur.className='out';
+    setTimeout(()=>{cur.className='';busy=false},CURTAIN_REVEAL_MS);
+  },CURTAIN_COVER_MS);
 }
 addEventListener('hashchange',go);addEventListener('pageshow',show);
 const API={url:'',key:''};
@@ -354,9 +362,9 @@ function unpop(){md.classList.remove('o');setTimeout(()=>{md.hidden=true;mdF&&md
 md.onclick=e=>{if(e.target===md||e.target.id==='mdb')unpop()};addEventListener('keydown',e=>{if(e.key==='Escape'&&!md.hidden)unpop()});
 show();
 // Révèle la page sous les bandes après une navigation interne.
-try{if(sessionStorage.getItem('wc-nav-transition')==='1'){sessionStorage.removeItem('wc-nav-transition');cur.className='in';requestAnimationFrame(()=>setTimeout(()=>{cur.className='out';setTimeout(()=>{cur.className=''},520)},40))}}catch(e){}
+try{if(sessionStorage.getItem('wc-nav-transition')==='1'){sessionStorage.removeItem('wc-nav-transition');cur.className='in';requestAnimationFrame(()=>setTimeout(()=>{cur.className='out';setTimeout(()=>{cur.className=''},CURTAIN_REVEAL_MS)},40))}}catch(e){}
 // Les navigations entre pages passent par le rideau à quatre bandes.
-document.addEventListener('click',e=>{const a=e.target.closest('a[href]');if(!a||e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||a.target==='_blank'||a.hasAttribute('download'))return;const u=new URL(a.href,location.href);if(u.origin!==location.origin||u.pathname===location.pathname||a.href.startsWith('mailto:')||a.href.startsWith('tel:'))return;e.preventDefault();if(busy)return;busy=true;cur.className='in';try{sessionStorage.setItem('wc-nav-transition','1')}catch(e){};setTimeout(()=>{location.href=u.href},520)});
+document.addEventListener('click',e=>{const a=e.target.closest('a[href]');if(!a||e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||a.target==='_blank'||a.hasAttribute('download'))return;const u=new URL(a.href,location.href);if(u.origin!==location.origin||u.pathname===location.pathname||a.href.startsWith('mailto:')||a.href.startsWith('tel:'))return;e.preventDefault();if(busy)return;busy=true;cur.className='in';try{sessionStorage.setItem('wc-nav-transition','1')}catch(e){};setTimeout(()=>{location.href=u.href},CURTAIN_COVER_MS)});
 document.getElementById('tg').onclick=()=>{const d=document.documentElement,dk=matchMedia('(prefers-color-scheme:dark)').matches;const now=d.dataset.theme||(dk?'dark':'light');const next=now==='dark'?'light':'dark';d.dataset.theme=next;try{localStorage.setItem('wc-theme',next)}catch(e){}};
 (()=>{const c=document.getElementById('bg'),x=c.getContext('2d'),rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
 let W,H,S,cols,rows,m={x:-999,y:-999};
