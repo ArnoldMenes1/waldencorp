@@ -305,6 +305,13 @@ header{padding-left:max(5vw,env(safe-area-inset-left));padding-right:max(5vw,env
 @media(max-width:820px){.home-hero:after{width:140px;height:140px;left:-72px;bottom:-72px}.home-hero .mk{transform:translateY(-4px) scale(1.04);max-width:165px}}
 @media(prefers-reduced-motion:reduce){.home-hero:after,.home-hero .mk:before,.home-hero .mk:after{animation:none!important}.home-hero .mk{transition:none}}
 
+
+/* Subtle blue geometric motifs rotating inside the two decorative circles */
+.home-hero:before,.home-hero:after{background-image:repeating-conic-gradient(from 0deg,transparent 0deg 27deg,color-mix(in srgb,var(--sky) 16%,transparent) 28deg 29deg,transparent 30deg 45deg);-webkit-mask-image:radial-gradient(circle,transparent 0 43%,#000 44% 67%,transparent 68%);mask-image:radial-gradient(circle,transparent 0 43%,#000 44% 67%,transparent 68%);animation:wc-circle-spin 36s linear infinite}
+.home-hero:after{background-color:transparent;background-image:repeating-conic-gradient(from 0deg,transparent 0deg 27deg,color-mix(in srgb,var(--sky) 16%,transparent) 28deg 29deg,transparent 30deg 45deg)}
+@keyframes wc-circle-spin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.home-hero:before,.home-hero:after{animation:none!important}}
+
 </style>
 </head>
 <body data-route="">
