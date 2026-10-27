@@ -286,7 +286,28 @@ section,.hero,.skill,.art-card,.final-cta{transition-duration:.2s}
 html.wc-leaving body{opacity:0;transform:translateY(-3px);transition:opacity .12s ease,transform .12s ease}
 @media(prefers-reduced-motion:reduce){body{animation:none!important}.wc-reveal{opacity:1;transform:none;transition:none!important}html.wc-leaving body{opacity:1;transform:none;transition:none!important}}
 
-\n/* Consentement newsletter lisible et utilisable au clavier */\n.nl-consent{display:flex;align-items:flex-start;gap:9px;margin:12px 0;font-size:.78rem;line-height:1.5;color:var(--muted)}.nl-consent input{flex:0 0 auto;width:16px;height:16px;margin-top:2px;accent-color:var(--sky)}.nl-consent a,.form-privacy a{text-decoration:underline;text-underline-offset:3px}\n</style>
+\n/* Consentement newsletter lisible et utilisable au clavier */\n.nl-consent{display:flex;align-items:flex-start;gap:9px;margin:12px 0;font-size:.78rem;line-height:1.5;color:var(--muted)}.nl-consent input{flex:0 0 auto;width:16px;height:16px;margin-top:2px;accent-color:var(--sky)}.nl-consent a,.form-privacy a{text-decoration:underline;text-underline-offset:3px}\n
+/* UX polish: interactions lisibles, formulaires et navigation mobile */
+button:disabled{opacity:.68;cursor:wait;transform:none!important;box-shadow:none!important}
+input[type="checkbox"]{width:18px;height:18px;flex:0 0 18px;margin:3px 0 0;accent-color:var(--sky);cursor:pointer}
+.nl-consent{display:flex;align-items:flex-start;gap:10px;font-size:.82rem;line-height:1.5;font-weight:400;color:var(--mut);cursor:pointer}
+.nl-consent a{display:inline!important;min-height:0!important;padding:0!important;color:var(--sky)!important;text-decoration:underline}
+#nls:empty{display:none}
+#ok{scroll-margin-top:120px}
+@media(max-width:760px){
+  header{background:color-mix(in srgb,var(--bg) 94%,transparent)}
+  .page{padding-top:clamp(112px,20vw,148px);padding-bottom:calc(112px + env(safe-area-inset-bottom,0px))}
+  nav{padding:8px max(12px,env(safe-area-inset-left)) calc(8px + env(safe-area-inset-bottom,0px));mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent)}
+  nav a{font-size:.82rem;min-height:44px}
+  .contact-shell{grid-template-columns:minmax(0,1fr);padding:clamp(18px,5vw,28px);gap:28px}
+  .contact-art{max-height:210px;overflow:hidden}
+  .contact-form-card{min-width:0}
+  .contact-form-card form{width:100%;min-width:0}
+  .contact-form-card input,.contact-form-card select,.contact-form-card textarea{font-size:16px}
+}
+@media(hover:none){.c:hover,.btn:hover{transform:none;box-shadow:none}}
+
+</style>
 </head>
 <body data-route="contact">
 <canvas id="bg" aria-hidden="true"></canvas>
