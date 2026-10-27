@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<script>try{const savedTheme=localStorage.getItem('wc-theme');if(savedTheme==='light'||savedTheme==='dark')document.documentElement.dataset.theme=savedTheme}catch(e){}</script>
+<script>try{const savedTheme=localStorage.getItem('wc-theme');document.documentElement.dataset.theme=(savedTheme==='light'||savedTheme==='dark')?savedTheme:'light'}catch(e){document.documentElement.dataset.theme='light'}</script>
 <title>Walden Corp | Développement logiciel sur mesure, SaaS et IA</title>
 <meta name="description" content="Walden Corp conçoit des logiciels sur mesure, plateformes SaaS, applications web et solutions d’intelligence artificielle pour les entreprises.">
 <meta name="robots" content="index,follow,max-image-preview:large">
