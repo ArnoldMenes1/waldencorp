@@ -401,7 +401,7 @@ header{padding-left:max(5vw,env(safe-area-inset-left));padding-right:max(5vw,env
 <script>
 const pages=[...document.querySelectorAll('.page')],cur=document.getElementById('cur');
 let busy=false,io;
-function split(h){if(h.dataset.s)return;h.dataset.s=1;const t=h.textContent;h.textContent='';t.split(' ').forEach((w,i)=>{const s=document.createElement('span');s.textContent=w;s.style.animationDelay=(.25+i*.07)+'s';h.append(s,' ')})}
+function split(h){if(h.dataset.s||h.children.length)return;h.dataset.s=1;const t=h.textContent;h.textContent='';t.split(' ').forEach((w,i)=>{const s=document.createElement('span');s.textContent=w;s.style.animationDelay=(.25+i*.07)+'s';h.append(s,' ')})}
 const T={solutions:'Solutions',services:'Services',methode:'Méthode',vision:'Vision',fondateur:'Fondateur',contact:'Contact',legal:'Informations légales',confirme:'Abonnement confirmé'};
 function show(){
   // Compatibilité avec les anciens liens en #/ : les convertir vers les URL propres.
