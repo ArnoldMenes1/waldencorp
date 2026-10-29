@@ -1,0 +1,38 @@
+:root {
+  /* Tokens documentaires : non importés automatiquement par les pages actuelles. */
+  --wc-bg: #EDF2FC;
+  --wc-surface: #FFFFFF;
+  --wc-ink: #0B1D42;
+  --wc-muted: #4A5A7C;
+  --wc-navy: #0F2A55;
+  --wc-blue: #4C7DFF;
+  --wc-saffron: #FFC233;
+  --wc-border: #CBD6EE;
+  --wc-font-heading: "Bricolage Grotesque", Georgia, serif;
+  --wc-font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --wc-space-1: 4px;
+  --wc-space-2: 8px;
+  --wc-space-3: 12px;
+  --wc-space-4: 16px;
+  --wc-space-5: 20px;
+  --wc-space-6: 24px;
+  --wc-space-8: 32px;
+  --wc-space-10: 40px;
+  --wc-space-12: 48px;
+  --wc-space-16: 64px;
+  --wc-space-20: 80px;
+  --wc-radius-control: 14px;
+  --wc-radius-card: 22px;
+  --wc-radius-pill: 999px;
+  --wc-content-max: 1240px;
+  --wc-body-line-height: 1.6;
+  --wc-touch-target-min: 44px;
+}
+:root[data-theme="dark"] {
+  --wc-bg: #06112A;
+  --wc-surface: #0C1E44;
+  --wc-ink: #EAF0FF;
+  --wc-muted: #9DB0D8;
+  --wc-navy: #8FB0FF;
+  --wc-border: #1B3266;
+}
