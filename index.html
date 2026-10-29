@@ -177,6 +177,7 @@ header{padding-left:max(5vw,env(safe-area-inset-left));padding-right:max(5vw,env
 .mb p{margin:10px auto 24px}
 
 </style>
+<script>try{const savedTheme=localStorage.getItem('walden-theme');if(savedTheme==='light'||savedTheme==='dark')document.documentElement.dataset.theme=savedTheme}catch{}</script>
 </head>
 <body>
 <canvas id="bg" aria-hidden="true"></canvas>
@@ -337,7 +338,7 @@ function pop(t,p){document.getElementById('mdt').textContent=t;document.getEleme
 function unpop(){md.classList.remove('o');setTimeout(()=>{md.hidden=true;mdF&&mdF.focus&&mdF.focus()},250)}
 md.onclick=e=>{if(e.target===md||e.target.id==='mdb')unpop()};addEventListener('keydown',e=>{if(e.key==='Escape'&&!md.hidden)unpop()});
 show();
-document.getElementById('tg').onclick=()=>{const d=document.documentElement,dk=matchMedia('(prefers-color-scheme:dark)').matches;const now=d.dataset.theme||(dk?'dark':'light');d.dataset.theme=now==='dark'?'light':'dark'};
+document.getElementById('tg').onclick=()=>{const d=document.documentElement,dk=matchMedia('(prefers-color-scheme:dark)').matches;const now=d.dataset.theme||(dk?'dark':'light');const next=now==='dark'?'light':'dark';d.dataset.theme=next;try{localStorage.setItem('walden-theme',next)}catch{}};
 (()=>{const c=document.getElementById('bg'),x=c.getContext('2d'),rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
 let W,H,S,cols,rows,m={x:-999,y:-999};
 function size(){const d=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;c.width=W*d;c.height=H*d;x.setTransform(d,0,0,d,0,0);S=W<600?44:W<1100?52:60;cols=Math.ceil(W/S)+1;rows=Math.ceil(H/S)+1;if(rm)draw(0)}
