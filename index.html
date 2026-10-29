@@ -288,6 +288,54 @@ header{padding-left:max(5vw,env(safe-area-inset-left));padding-right:max(5vw,env
 @media(max-width:900px){.home-pillars{grid-template-columns:repeat(2,minmax(0,1fr))}.home-pillar:last-child{grid-column:1/-1}.home-pillar:last-child .home-pillar-art svg{max-width:340px}.home-proof-band{gap:14px}.home-audience{gap:28px}}
 @media(max-width:640px){.home-section-intro{margin-top:54px}.home-pillars{grid-template-columns:1fr;gap:14px}.home-pillar:last-child{grid-column:auto}.home-pillar-art{min-height:160px}.home-pillar-art svg{height:100px}.home-pillar-body{padding:20px}.home-proof-band{grid-template-columns:1fr;gap:16px;margin:24px 0 52px;padding:20px 0}.home-audience{grid-template-columns:1fr;gap:22px}.audience-visual{max-width:380px;margin-inline:auto;width:100%}}
 @media(prefers-reduced-motion:reduce){.home-pillar,.home-pillar-art:after,.quality-ring,.quality-check,.quality-dot,.intel-line,.intel-pulse,.intel-orbit,.intel-spark,.life-path,.life-node-middle,.audience-orbit,.audience-node{animation:none!important;transition:none!important}.quality-check{stroke-dashoffset:0}}
+
+/* Page Solutions — composition dédiée, dans l'identité Walden */
+.solutions-hero{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr);gap:clamp(26px,5vw,70px);align-items:center;padding:clamp(22px,3.5vw,42px) 0 64px}
+.solutions-copy{min-width:0}.solutions-copy h1{font-size:clamp(2.65rem,5.5vw,5.3rem);line-height:1.02;max-width:12ch}
+.solutions-lead{font-size:1.1rem;margin:24px 0 28px;max-width:54ch}
+.solutions-status{width:8px;height:8px;border-radius:50%;background:var(--sun);box-shadow:0 0 0 5px color-mix(in srgb,var(--sun) 18%,transparent);animation:solutions-blink 2.4s ease-in-out infinite}
+@keyframes solutions-blink{50%{box-shadow:0 0 0 9px color-mix(in srgb,var(--sun) 5%,transparent);opacity:.7}}
+.solutions-actions{display:flex;gap:10px;flex-wrap:wrap}.solutions-actions .btn,.solutions-cta .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px}.solutions-actions svg,.solutions-cta svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.solutions-proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;border-top:1px solid var(--line);margin-top:34px;padding-top:20px}.solutions-proof b,.solutions-proof span{display:block}.solutions-proof b{font:800 1.05rem var(--fd)}.solutions-proof span{font-size:.82rem;color:var(--mut);margin-top:3px}
+.solutions-visual{position:relative;min-width:0;border:1px solid var(--line);border-radius:30px 8px 30px 8px;background:color-mix(in srgb,var(--card) 84%,var(--bg));padding:16px 18px 14px;overflow:hidden;box-shadow:0 24px 65px color-mix(in srgb,var(--navy) 9%,transparent)}
+.solutions-visual:before{content:"";position:absolute;inset:0;background-image:linear-gradient(color-mix(in srgb,var(--sky) 8%,transparent) 1px,transparent 1px),linear-gradient(90deg,color-mix(in srgb,var(--sky) 8%,transparent) 1px,transparent 1px);background-size:24px 24px;mask-image:linear-gradient(135deg,#000,transparent 85%);pointer-events:none}
+.solutions-visual-top,.solutions-visual-foot{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:8px;color:var(--mut);font-size:.65rem;font-weight:700;letter-spacing:.08em}
+.solutions-monogram{display:grid;place-items:center;width:31px;height:31px;border-radius:10px 3px 10px 3px;background:var(--navy);color:var(--bg);font:800 .72rem var(--fd);letter-spacing:0}
+.solutions-live{display:flex;align-items:center;gap:6px;color:var(--ink);font-size:.6rem}.solutions-live i{width:6px;height:6px;border-radius:50%;background:#36B37E;box-shadow:0 0 0 4px rgba(54,179,126,.12)}
+.solutions-system{position:relative;z-index:1;display:block;width:100%;overflow:visible;margin:5px auto}
+.sol-orbit{fill:none;stroke:var(--line);stroke-width:1.4}.sol-orbit-dash{stroke-dasharray:4 7;transform-origin:210px 177px;animation:sol-orbit 32s linear infinite}
+@keyframes sol-orbit{to{transform:rotate(360deg)}}
+.sol-link{fill:none;stroke:var(--sky);stroke-width:1.5;stroke-dasharray:5 7;animation:sol-dash 8s linear infinite}
+@keyframes sol-dash{to{stroke-dashoffset:-96}}
+.sol-node{fill:var(--card);stroke:var(--line);stroke-width:1.4;filter:drop-shadow(0 7px 9px color-mix(in srgb,var(--navy) 8%,transparent));animation:sol-node-in .8s both}.sol-node:nth-of-type(3){animation-delay:.12s}.sol-node:nth-of-type(4){animation-delay:.2s}.sol-node:nth-of-type(5){animation-delay:.28s}
+@keyframes sol-node-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.sol-icon{fill:none;stroke:var(--sky);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.sol-label{font:800 8.5px var(--fb);fill:var(--ink);letter-spacing:.3px}.sol-sub{font:500 8px var(--fb);fill:var(--mut)}
+.sol-core{fill:var(--navy);stroke:var(--sun);stroke-width:3;filter:drop-shadow(0 8px 12px color-mix(in srgb,var(--navy) 18%,transparent));animation:sol-core-float 4s ease-in-out infinite}
+@keyframes sol-core-float{50%{transform:translateY(-4px)}}
+.sol-core-mark{fill:none;stroke:var(--sun);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.sol-core-pulse{fill:none;stroke:var(--sky);stroke-width:1.5;opacity:.55;transform-origin:210px 177px;animation:sol-pulse 3s ease-out infinite}
+@keyframes sol-pulse{0%{transform:scale(.84);opacity:.7}100%{transform:scale(1.18);opacity:0}}
+.sol-spark{fill:var(--sun);animation:sol-spark 2.8s ease-in-out infinite}.sol-spark-two{animation-delay:1.4s}
+@keyframes sol-spark{50%{opacity:.35;transform:scale(.7)}}
+.solutions-visual-foot{border-top:1px solid var(--line);padding-top:13px;font-size:.62rem}
+.solutions-section-heading{max-width:760px;margin:4px 0 30px}.solutions-section-heading h2{font-size:clamp(2rem,4.5vw,3.4rem);max-width:18ch;margin-bottom:14px}.solutions-section-heading p{font-size:1.02rem}
+.solutions-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.solution-card{position:relative;display:flex;flex-direction:column;min-width:0;padding:clamp(22px,3vw,32px);border:1px solid var(--line);border-radius:24px 6px 24px 6px;background:var(--card);overflow:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .3s}
+.solution-card:before{content:"";position:absolute;left:0;top:0;width:100%;height:3px;background:linear-gradient(90deg,var(--sky),var(--sun));transform:scaleX(0);transform-origin:left;transition:transform .35s}
+.solution-card:hover{transform:translateY(-5px);border-color:color-mix(in srgb,var(--sky) 55%,var(--line));box-shadow:0 18px 42px color-mix(in srgb,var(--navy) 9%,transparent)}.solution-card:hover:before{transform:scaleX(1)}
+.solution-card-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px}.solution-index{font-size:.7rem;font-weight:700;letter-spacing:.1em;color:var(--mut)}
+.solution-icon{display:grid;place-items:center;width:46px;height:46px;border-radius:14px 4px 14px 4px;background:color-mix(in srgb,var(--sky) 12%,var(--card));color:var(--sky)}
+.solution-icon svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.solution-card h3{font-size:clamp(1.25rem,2vw,1.55rem);max-width:25ch}.solution-card>p{margin-top:12px;font-size:.98rem;max-width:55ch}
+.solution-card ul{list-style:none;padding:0;margin:18px 0 24px;display:grid;gap:9px}.solution-card li{position:relative;padding-left:20px;color:var(--mut);font-size:.9rem;line-height:1.45}.solution-card li:before{content:"";position:absolute;left:1px;top:.48em;width:7px;height:7px;border-radius:2px;background:var(--sun);transform:rotate(45deg)}
+.solution-link{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid var(--line);font-size:.9rem;font-weight:700;text-decoration:none;color:var(--ink)}.solution-link span{color:var(--sky);font-size:1.2rem;transition:transform .2s}.solution-link:hover span{transform:translate(3px,-3px)}
+.solutions-cta{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:28px;padding:clamp(24px,4vw,40px);border:1px solid var(--line);border-radius:8px 28px 8px 28px;background:color-mix(in srgb,var(--sky) 7%,var(--card))}
+.solutions-cta>div{min-width:0}.solutions-cta h2{font-size:clamp(1.6rem,3.4vw,2.5rem);max-width:22ch;margin:0 0 10px}.solutions-cta p{font-size:.95rem;max-width:58ch}
+@media(max-width:980px){.solutions-hero{grid-template-columns:minmax(0,1fr) minmax(280px,.9fr);gap:26px}.solutions-copy h1{font-size:clamp(2.6rem,6vw,4.2rem)}}
+@media(max-width:760px){.solutions-hero{grid-template-columns:1fr;padding-top:8px;gap:28px}.solutions-copy h1{max-width:15ch}.solutions-visual{max-width:520px;width:100%;justify-self:center}.solutions-grid{grid-template-columns:1fr}.solution-card{padding:25px}.solutions-cta{align-items:flex-start;flex-direction:column}.solutions-proof{margin-top:26px}}
+@media(max-width:420px){.solutions-visual{padding:12px 10px}.solutions-visual-top{font-size:.55rem}.solutions-live{font-size:.52rem}.solutions-proof{gap:8px}.solutions-proof b{font-size:.94rem}.solutions-proof span{font-size:.75rem}.solutions-actions .btn{width:100%;margin-right:0}}
+@media(prefers-reduced-motion:reduce){.solutions-status,.sol-orbit-dash,.sol-link,.sol-node,.sol-core,.sol-core-pulse,.sol-spark{animation:none!important}.solution-card,.solution-link span{transition:none!important}}
+
 </style>
 <script>try{const savedTheme=localStorage.getItem('walden-theme');if(savedTheme==='light'||savedTheme==='dark')document.documentElement.dataset.theme=savedTheme}catch{}</script>
 </head>
@@ -325,17 +373,74 @@ header{padding-left:max(5vw,env(safe-area-inset-left));padding-right:max(5vw,env
 </section>
 
 <section class="page" id="p-solutions">
-<h1 class="hl">Ce que nous construisons</h1>
-<p style="margin:24px 0 50px;font-size:1.15rem">Produits propriétaires ou solutions sur mesure : une même exigence de finition.</p>
-<div class="grid">
-<div class="c rv" id="apps"><h3>Applications web, mobile et desktop</h3><p>Des interfaces rapides, accessibles et cohérentes sur tous les écrans.</p></div>
-<div class="c rv" id="saas"><h3>Plateformes SaaS</h3><p>Abonnements, multi-clients, tableaux de bord : la base d'un produit commercialisable.</p></div>
-<div class="c rv" id="metiers"><h3>Logiciels métiers, CRM et ERP</h3><p>Des outils taillés pour vos processus, pas l'inverse.</p></div>
-<div class="c rv" id="ia"><h3>Solutions d'intelligence artificielle</h3><p>Assistants, analyse, automatisation intelligente intégrés à vos outils.</p></div>
-<div class="c rv" id="api"><h3>API et services cloud</h3><p>Des services robustes qui connectent vos systèmes entre eux.</p></div>
-<div class="c rv" id="portails"><h3>Portails, collaboration et e-commerce</h3><p>Portails clients, plateformes collaboratives, sites professionnels et boutiques en ligne.</p></div>
-<div class="c rv" id="design"><h3>Design systems et composants</h3><p>Des bibliothèques réutilisables pour livrer plus vite sans perdre en cohérence.</p></div>
-<div class="c rv" id="productivite"><h3>Productivité et analytique</h3><p>Outils du quotidien et tableaux de bord pour décider avec des chiffres fiables.</p></div></div>
+  <div class="solutions-hero">
+    <div class="solutions-copy">
+      <span class="eyebrow"><span class="solutions-status"></span> Nos solutions · Du concret, conçu pour durer</span>
+      <h1 class="hl">Des solutions numériques <span class="accent-word">qui font avancer.</span></h1>
+      <p class="solutions-lead">Nous transformons vos objectifs et vos contraintes en produits numériques utiles, fiables et prêts à évoluer — de l'application métier à l'intelligence artificielle.</p>
+      <div class="solutions-actions"><a class="btn" href="/contact">Parler de mon besoin <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><a class="btn g" href="/methode">Comment nous travaillons</a></div>
+      <div class="solutions-proof"><div><b>Adaptées</b><span>À votre réalité</span></div><div><b>Connectées</b><span>À vos outils</span></div><div><b>Évolutives</b><span>Avec vos ambitions</span></div></div>
+    </div>
+    <div class="solutions-visual" aria-label="Illustration des briques d'une solution numérique">
+      <div class="solutions-visual-top"><span class="solutions-monogram">WC</span><span>PRODUCT ARCHITECTURE</span><span class="solutions-live"><i></i> CONNECTÉ</span></div>
+      <svg class="solutions-system" viewBox="0 0 420 360" role="img" aria-label="Interface, données, intelligence artificielle et services connectés autour d'un produit central">
+        <circle class="sol-orbit sol-orbit-dash" cx="210" cy="177" r="132"/>
+        <circle class="sol-orbit" cx="210" cy="177" r="99"/>
+        <path class="sol-link" d="M210 177 100 87M210 177 320 87M210 177 100 267M210 177 320 267"/>
+        <rect class="sol-node" x="24" y="42" width="144" height="82" rx="14"/><path class="sol-icon" d="M42 59h29v20H42zM42 85h29v21H42zM48 65h17M48 91h17"/><text class="sol-label" x="82" y="73">INTERFACES</text><text class="sol-sub" x="82" y="92">Web · Mobile</text>
+        <rect class="sol-node" x="252" y="42" width="144" height="82" rx="14"/><path class="sol-icon" d="M271 61h25v9h-25zM271 75h25v9h-25zM271 89h25v9h-25z"/><text class="sol-label" x="308" y="73">DONNÉES</text><text class="sol-sub" x="308" y="92">Structurées</text>
+        <rect class="sol-node" x="24" y="230" width="144" height="82" rx="14"/><path class="sol-icon" d="M56 248 62 260 75 262 65 271 68 284 56 277 44 284 47 271 37 262 50 260Z"/><text class="sol-label" x="82" y="261">INTELLIGENCE</text><text class="sol-sub" x="82" y="280">Automatisation</text>
+        <rect class="sol-node" x="252" y="230" width="144" height="82" rx="14"/><path class="sol-icon" d="M271 253h25v25h-25zM276 248h15M276 283h15M265 260v11M302 260v11"/><text class="sol-label" x="308" y="261">INTÉGRATIONS</text><text class="sol-sub" x="308" y="280">API · Cloud</text>
+        <circle class="sol-core" cx="210" cy="177" r="48"/><path class="sol-core-mark" d="M188 161h19l-8 16h21l-10 18"/><circle class="sol-core-pulse" cx="210" cy="177" r="59"/>
+        <circle class="sol-spark" cx="210" cy="36" r="5"/><circle class="sol-spark sol-spark-two" cx="210" cy="318" r="4"/>
+      </svg>
+      <div class="solutions-visual-foot"><span>UNE ARCHITECTURE COHÉRENTE</span><span>01 — 04</span></div>
+    </div>
+  </div>
+  <div class="solutions-section-heading rv"><span class="eyebrow">Notre terrain de jeu</span><h2>La bonne brique pour le bon enjeu.</h2><p>Chaque solution répond à un usage précis. Nous pouvons la développer seule ou l'intégrer dans un écosystème existant.</p></div>
+  <div class="solutions-grid">
+    <article class="solution-card rv" id="apps">
+      <div class="solution-card-top"><span class="solution-index">01 / PRODUIT</span><span class="solution-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4M7 8h10"/></svg></span></div>
+      <h3>Applications web, mobile &amp; desktop</h3><p>Des expériences simples et rapides, accessibles sur les écrans et appareils de vos utilisateurs.</p>
+      <ul><li>Applications métier et espaces clients</li><li>Interfaces responsive et accessibles</li><li>Applications mobiles et outils internes</li></ul><a class="solution-link" href="/contact">Imaginer mon application <span>↗</span></a>
+    </article>
+    <article class="solution-card rv" id="saas">
+      <div class="solution-card-top"><span class="solution-index">02 / PLATEFORME</span><span class="solution-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 6.5h.01M11 6.5h.01M7 13h4m-4 3h8"/></svg></span></div>
+      <h3>Plateformes SaaS</h3><p>Des produits numériques accessibles en ligne, conçus pour grandir avec leurs utilisateurs.</p>
+      <ul><li>Espaces multi-organisations</li><li>Abonnements et gestion des accès</li><li>Tableaux de bord et fonctionnalités métier</li></ul><a class="solution-link" href="/contact">Développer un produit SaaS <span>↗</span></a>
+    </article>
+    <article class="solution-card rv" id="metiers">
+      <div class="solution-card-top"><span class="solution-index">03 / OPÉRATIONS</span><span class="solution-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v15H4zM8 9h8M8 13h5M8 17h7"/><circle cx="18" cy="17" r="2"/></svg></span></div>
+      <h3>Logiciels métiers, CRM &amp; ERP</h3><p>Des outils alignés sur vos processus réels, qui réduisent les tâches manuelles et les doubles saisies.</p>
+      <ul><li>Gestion des clients et des opérations</li><li>Suivi des stocks, dossiers et ressources</li><li>Automatisation de workflows internes</li></ul><a class="solution-link" href="/contact">Améliorer mes opérations <span>↗</span></a>
+    </article>
+    <article class="solution-card rv" id="ia">
+      <div class="solution-card-top"><span class="solution-index">04 / INTELLIGENCE</span><span class="solution-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4a3 3 0 0 0-5 2 3 3 0 0 0 0 6 3 3 0 0 0 5 3M15 4a3 3 0 0 1 5 2 3 3 0 0 1 0 6 3 3 0 0 1-5 3M9 4v16m6-16v16M9 8h6m-6 8h6"/></svg></span></div>
+      <h3>Intelligence artificielle</h3><p>Des capacités d'analyse et d'assistance intégrées à vos outils, avec un objectif métier clair.</p>
+      <ul><li>Assistants et recherche documentaire</li><li>Analyse prédictive et aide à la décision</li><li>Classification et automatisation intelligente</li></ul><a class="solution-link" href="/solutions/ia">Explorer les solutions IA <span>↗</span></a>
+    </article>
+    <article class="solution-card rv" id="api">
+      <div class="solution-card-top"><span class="solution-index">05 / CONNEXION</span><span class="solution-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="12" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="m9 11 6-4m-6 6 6 4"/></svg></span></div>
+      <h3>API, cloud &amp; intégrations</h3><p>Faites dialoguer vos outils et vos données sans multiplier les manipulations.</p>
+      <ul><li>API sécurisées et services backend</li><li>Synchronisation entre logiciels</li><li>Automatisation des échanges de données</li></ul><a class="solution-link" href="/contact">Connecter mes outils <span>↗</span></a>
+    </article>
+    <article class="solution-card rv" id="portails">
+      <div class="solution-card-top"><span class="solution-index">06 / ÉCOSYSTÈME</span><span class="solution-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3zM3 9h18M8 5v4m8-4v4M7 13h4m-4 3h8"/></svg></span></div>
+      <h3>Portails &amp; commerce numérique</h3><p>Des espaces digitaux qui facilitent les échanges entre votre organisation, vos clients et vos partenaires.</p>
+      <ul><li>Portails clients et partenaires</li><li>Sites professionnels et e-commerce</li><li>Espaces collaboratifs</li></ul><a class="solution-link" href="/contact">Créer mon portail <span>↗</span></a>
+    </article>
+    <article class="solution-card rv" id="design">
+      <div class="solution-card-top"><span class="solution-index">07 / COHÉRENCE</span><span class="solution-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg></span></div>
+      <h3>Design systems &amp; composants</h3><p>Une base visuelle et technique cohérente pour accélérer la conception sans sacrifier la qualité.</p>
+      <ul><li>Bibliothèques de composants réutilisables</li><li>Règles UI et tokens visuels</li><li>Interfaces cohérentes entre produits</li></ul><a class="solution-link" href="/contact">Structurer mon interface <span>↗</span></a>
+    </article>
+    <article class="solution-card rv" id="productivite">
+      <div class="solution-card-top"><span class="solution-index">08 / PILOTAGE</span><span class="solution-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V12h4v8M10 20V5h4v15M16 20V9h4v11M3 20h18"/></svg></span></div>
+      <h3>Productivité &amp; analytique</h3><p>Des données plus lisibles et des tâches mieux organisées pour prendre de meilleures décisions.</p>
+      <ul><li>Tableaux de bord opérationnels</li><li>Indicateurs et rapports de suivi</li><li>Automatisation des tâches répétitives</li></ul><a class="solution-link" href="/contact">Mieux piloter mon activité <span>↗</span></a>
+    </article>
+  </div>
+  <div class="solutions-cta rv"><div><span class="eyebrow">Vous avez un besoin précis ?</span><h2>Commençons par le problème à résoudre.</h2><p>Nous clarifions l'objectif, les utilisateurs et les contraintes avant de choisir la solution technique.</p></div><a class="btn" href="/contact">Décrire mon projet <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div>
 </section>
 
 <section class="page" id="p-services">
