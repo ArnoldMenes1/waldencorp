@@ -223,6 +223,36 @@ header{padding-left:max(5vw,env(safe-area-inset-left));padding-right:max(5vw,env
 @media(max-width:520px){.contact-shell,.founder-shell{padding:20px;border-radius:22px 6px 22px 6px}.contact-form-card{padding:20px}.founder-principles{grid-template-columns:1fr;gap:14px}.founder-final-cta{align-items:flex-start;flex-direction:column}.founder-art-caption{flex-direction:column;gap:3px}}
 @media(prefers-reduced-motion:reduce){.art-plane,.art-dot{animation:none!important}.rv,.rv.v{opacity:1;transform:none;transition:none}.hl span{animation:none;opacity:1;transform:none}}
 
+
+/* Services — carte éditoriale et profondeur visuelle cohérentes avec Fondateur */
+.services-hero{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(300px,.92fr);gap:clamp(24px,5vw,66px);align-items:center;padding:clamp(22px,4vw,54px);border:1px solid var(--line);border-radius:30px 8px 30px 8px;background:color-mix(in srgb,var(--card) 82%,var(--bg));box-shadow:0 24px 70px color-mix(in srgb,var(--navy) 9%,transparent);overflow:hidden}
+.services-hero-copy{min-width:0}.services-hero-copy h1{font-size:clamp(2.45rem,5vw,4.6rem);line-height:1.04;max-width:15ch}.services-lead{max-width:55ch;margin:22px 0 28px;font-size:clamp(1rem,1.5vw,1.14rem)}
+.services-hero-actions{display:flex;flex-wrap:wrap;gap:10px}.services-hero-actions .btn,.services-final-cta .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px}.services-hero-actions svg,.services-final-cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.services-proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:34px;padding-top:22px;border-top:1px solid var(--line)}.services-proof b,.services-proof span{display:block}.services-proof b{font-size:.9rem}.services-proof span{margin-top:4px;color:var(--mut);font-size:.78rem}
+.services-hero-art{position:relative;min-width:0;border:1px solid var(--line);border-radius:26px 8px 26px 8px;background:color-mix(in srgb,var(--bg) 88%,var(--sky) 12%);overflow:hidden;padding:16px}
+.services-hero-art:before{content:"";position:absolute;inset:0;background-image:linear-gradient(color-mix(in srgb,var(--sky) 10%,transparent) 1px,transparent 1px),linear-gradient(90deg,color-mix(in srgb,var(--sky) 10%,transparent) 1px,transparent 1px);background-size:24px 24px;mask-image:radial-gradient(ellipse,black,transparent 78%)}
+.services-art-top,.services-art-footer{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:8px;color:var(--mut);font-size:.61rem;font-weight:700;letter-spacing:.09em}.services-art-mark{display:grid;place-items:center;width:30px;height:30px;background:var(--navy);color:var(--bg);border-radius:8px;font-size:.8rem;letter-spacing:0}.services-live{display:flex;align-items:center;gap:6px}.services-live i{width:6px;height:6px;border-radius:50%;background:var(--sun);box-shadow:0 0 0 4px color-mix(in srgb,var(--sun) 18%,transparent)}
+.services-system-svg{position:relative;z-index:1;display:block;width:100%;height:auto;margin:8px 0}.service-orbit{fill:none;stroke:var(--line);stroke-width:1.5}.service-orbit-dashed{stroke-dasharray:5 8}.service-connector{fill:none;stroke:var(--sky);stroke-width:1.6;stroke-dasharray:4 5;opacity:.8}
+.service-node{fill:var(--card);stroke:var(--line);stroke-width:1.5}.service-node-icon{fill:none;stroke:var(--sky);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.service-node-title{fill:var(--ink);font-size:10px;font-weight:800;text-anchor:middle}.service-node-sub{fill:var(--mut);font-size:8px;text-anchor:middle}.service-core-ring{fill:var(--card);stroke:var(--sky);stroke-width:2}.service-core-mark{fill:none;stroke:var(--sun);stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.service-core-dot{fill:none;stroke:var(--sky);stroke-width:1;stroke-dasharray:3 5;transform-origin:220px 176px;animation:service-orbit 24s linear infinite}
+.services-art-footer{padding-top:12px;border-top:1px solid var(--line)}
+.services-section-heading{max-width:800px;margin:clamp(58px,8vw,96px) auto 30px;text-align:center}.services-section-heading h2{font-size:clamp(2rem,4vw,3.4rem);margin:0 0 12px}.services-section-heading p{margin:0 auto;font-size:1.02rem}
+.services-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.service-card{display:flex;flex-direction:column;min-width:0;padding:clamp(20px,2.5vw,30px);border:1px solid var(--line);border-radius:24px 6px 24px 6px;background:var(--card);box-shadow:0 14px 36px color-mix(in srgb,var(--navy) 5%,transparent);transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+.service-card:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--sky) 55%,var(--line));box-shadow:0 22px 48px color-mix(in srgb,var(--navy) 10%,transparent)}
+.service-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}.service-index{font-size:.76rem;font-weight:800;letter-spacing:.12em;color:var(--mut)}.service-icon{display:grid;place-items:center;width:48px;height:48px;border-radius:15px;background:color-mix(in srgb,var(--sky) 13%,var(--bg));color:var(--sky)}.service-icon svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.service-card h3{font-size:clamp(1.22rem,1.8vw,1.5rem);margin:0 0 10px}.service-card-intro{font-size:.94rem;min-height:3.2em;margin:0 0 16px;color:var(--mut)}
+.service-card ul{list-style:none;padding:0;margin:0 0 20px;display:grid;gap:10px}.service-card li{position:relative;padding-left:20px;font-size:.88rem;line-height:1.5}.service-card li:before{content:"";position:absolute;left:0;top:.52em;width:8px;height:8px;border-radius:2px;background:var(--sun);transform:rotate(45deg)}
+.service-deliverable{margin-top:auto;padding:14px;border-radius:12px;background:color-mix(in srgb,var(--bg) 82%,var(--sky) 18%);border:1px solid color-mix(in srgb,var(--sky) 14%,var(--line))}.service-deliverable b,.service-deliverable span{display:block}.service-deliverable b{font-size:.78rem;margin-bottom:5px}.service-deliverable span{font-size:.8rem;line-height:1.5;color:var(--mut)}
+.service-card-link{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px;padding-top:15px;border-top:1px solid var(--line);font-size:.9rem;font-weight:700;color:var(--sky);text-decoration:none}.service-card-link span{font-size:1.15rem;transition:transform .2s}.service-card-link:hover span{transform:translate(3px,-3px)}
+.services-approach{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(260px,.9fr);gap:clamp(24px,5vw,64px);align-items:center;margin:clamp(58px,8vw,96px) 0;padding:clamp(24px,4vw,44px);border:1px solid var(--line);border-radius:24px 6px 24px 6px;background:color-mix(in srgb,var(--card) 84%,var(--bg));}
+.services-approach h2{font-size:clamp(1.8rem,3.6vw,2.8rem);line-height:1.12;margin:0 0 16px}.services-approach p{margin:0;max-width:60ch}.services-approach-points{display:grid;gap:0}.services-approach-points div{padding:15px 0;border-bottom:1px solid var(--line)}.services-approach-points div:first-child{border-top:1px solid var(--line)}.services-approach-points b,.services-approach-points span{display:block}.services-approach-points b{font-size:.88rem;color:var(--sky)}.services-approach-points span{font-size:.87rem;margin-top:5px}
+.services-final-cta{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:clamp(24px,4vw,42px);border:1px solid var(--line);border-radius:24px 6px 24px 6px;background:var(--card);box-shadow:0 16px 40px color-mix(in srgb,var(--navy) 6%,transparent)}
+.services-final-cta h2{font-size:clamp(1.7rem,3.5vw,2.5rem);margin:0 0 8px}.services-final-cta p{margin:0;max-width:60ch}
+@keyframes service-orbit{to{transform:rotate(360deg)}}
+@media(max-width:980px){.services-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.services-hero{grid-template-columns:1fr}.services-hero-art{max-width:560px;width:100%;justify-self:center}.services-approach{grid-template-columns:1fr}}
+@media(max-width:600px){.services-hero{padding:20px;border-radius:22px 6px 22px 6px}.services-grid{grid-template-columns:1fr}.services-proof{grid-template-columns:1fr;gap:12px}.service-card-intro{min-height:0}.services-final-cta{align-items:flex-start;flex-direction:column}.services-hero-art{padding:12px}.services-art-top,.services-art-footer{font-size:.54rem}}
+@media(prefers-reduced-motion:reduce){.service-card,.service-core-dot{transition:none!important;animation:none!important}.service-card:hover{transform:none}}
+
 </style>
 <script>try{const savedTheme=localStorage.getItem('walden-theme');if(savedTheme==='light'||savedTheme==='dark')document.documentElement.dataset.theme=savedTheme}catch{}</script>
 </head>
@@ -273,13 +303,80 @@ header{padding-left:max(5vw,env(safe-area-inset-left));padding-right:max(5vw,env
 </section>
 
 <section class="page" id="p-services">
-<h1 class="hl">Un accompagnement complet</h1>
-<p style="margin:24px 0 50px;font-size:1.15rem">Au-delà du code, nous vous suivons dans toute votre transformation numérique.</p>
-<div class="split" style="margin-top:0">
-<div class="rv" id="concevoir"><h3 style="margin-bottom:16px">Concevoir</h3><div class="chips"><a href="/contact">Étude des besoins</a><a href="/contact">Conception fonctionnelle</a><a href="/contact">Architecture logicielle</a><a href="/contact">UX/UI design</a><a href="/contact">Conseil technologique</a></div></div>
-<div class="rv" id="construire"><h3 style="margin-bottom:16px">Construire</h3><div class="chips"><a href="/contact">Développement full stack</a><a href="/contact">Déploiement cloud</a><a href="/contact">Intégration continue</a><a href="/contact">Cybersécurité</a></div></div>
-<div class="rv" id="durer"><h3 style="margin-bottom:16px">Faire durer</h3><div class="chips"><a href="/contact">Maintenance corrective et évolutive</a><a href="/contact">Support technique</a><a href="/contact">Optimisation des performances</a><a href="/contact">Audit technique</a></div></div>
-<div class="rv" id="transmettre"><h3 style="margin-bottom:16px">Transmettre</h3><div class="chips"><a href="/contact">Formation des équipes</a><a href="/contact">Accompagnement stratégique</a></div></div></div>
+  <div class="services-hero">
+    <div class="services-hero-copy">
+      <span class="eyebrow"><span class="status-dot"></span> Nos services · De l'idée au produit</span>
+      <h1 class="hl">Du conseil à la mise en production. <span class="accent-word">Sans perdre de vue le résultat.</span></h1>
+      <p class="services-lead">Nous concevons, développons et faisons évoluer des solutions numériques adaptées à vos objectifs — avec une attention constante à la fiabilité, à la sécurité et à la simplicité d'utilisation.</p>
+      <div class="services-hero-actions"><a class="btn" href="/contact">Parler de mon projet <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><a class="btn g" href="/methode">Notre méthode</a></div>
+      <div class="services-proof"><div><b>Sur mesure</b><span>Vos contraintes d'abord</span></div><div><b>De bout en bout</b><span>Un parcours cohérent</span></div><div><b>Conçu pour durer</b><span>Évolutif et maintenable</span></div></div>
+    </div>
+    <div class="services-hero-art" aria-label="Illustration de services logiciels connectés">
+      <div class="services-art-top"><span class="services-art-mark">WC</span><span>ENGINEERING SYSTEMS</span><span class="services-live"><i></i> STRUCTURÉ</span></div>
+      <svg class="services-system-svg" viewBox="0 0 440 360" role="img" aria-label="Modules de conception, développement, déploiement et évolution reliés autour d'un noyau logiciel">
+        <circle class="service-orbit" cx="220" cy="176" r="130"/><circle class="service-orbit service-orbit-dashed" cx="220" cy="176" r="98"/>
+        <path class="service-connector" d="M220 176 103 91M220 176 339 91M220 176 102 265M220 176 340 265"/>
+        <rect class="service-node" x="28" y="44" width="128" height="72" rx="13"/><path class="service-node-icon" d="M48 66h22v22H48zM54 60h22v22"/><text class="service-node-title" x="82" y="76">CONCEVOIR</text><text class="service-node-sub" x="82" y="94">Cadrer &amp; designer</text>
+        <rect class="service-node" x="284" y="44" width="128" height="72" rx="13"/><path class="service-node-icon" d="M303 66l-8 9 8 9m13-18 8 9-8 9m-1-24-7 30"/><text class="service-node-title" x="338" y="76">DÉVELOPPER</text><text class="service-node-sub" x="338" y="94">Construire &amp; tester</text>
+        <rect class="service-node" x="28" y="230" width="128" height="72" rx="13"/><path class="service-node-icon" d="M48 250h22v24H48zM44 278h30m-15-4v4"/><text class="service-node-title" x="82" y="261">DÉPLOYER</text><text class="service-node-sub" x="82" y="279">Livrer &amp; sécuriser</text>
+        <rect class="service-node" x="284" y="230" width="128" height="72" rx="13"/><path class="service-node-icon" d="M306 250a13 13 0 1 0 13 13m-13-20v8h8m8-1v-7h-7"/><text class="service-node-title" x="338" y="261">FAIRE ÉVOLUER</text><text class="service-node-sub" x="338" y="279">Maintenir &amp; optimiser</text>
+        <circle class="service-core-ring" cx="220" cy="176" r="45"/><path class="service-core-mark" d="M199 160h20l-9 16h20l-10 17"/><circle class="service-core-dot" cx="220" cy="176" r="58"/>
+      </svg>
+      <div class="services-art-footer"><span>UNE CHAÎNE DE VALEUR CONTINUE</span><span>01 — 04</span></div>
+    </div>
+  </div>
+
+  <div class="services-section-heading rv"><span class="eyebrow">Ce que nous prenons en charge</span><h2>Les bons services, au bon moment.</h2><p>Vous pouvez nous confier une étape précise ou nous accompagner sur tout le cycle de vie du produit.</p></div>
+  <div class="services-grid">
+    <article class="service-card rv" id="concevoir">
+      <div class="service-card-top"><span class="service-index">01</span><span class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM8 9h8M8 13h5M8 17h3"/></svg></span></div>
+      <h3>Stratégie &amp; conception</h3><p class="service-card-intro">Clarifier le problème avant d'investir dans le développement.</p>
+      <ul><li>Analyse des besoins et des utilisateurs</li><li>Ateliers de cadrage et spécifications fonctionnelles</li><li>Parcours utilisateurs, UX/UI et prototypes</li><li>Choix technologiques et architecture initiale</li></ul>
+      <div class="service-deliverable"><b>Livrables possibles</b><span>Cahier de besoins, maquettes, feuille de route et périmètre MVP.</span></div>
+      <a class="service-card-link" href="/contact">Cadrer mon projet <span>↗</span></a>
+    </article>
+    <article class="service-card rv" id="construire">
+      <div class="service-card-top"><span class="service-index">02</span><span class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-2-14-4 18"/></svg></span></div>
+      <h3>Développement logiciel</h3><p class="service-card-intro">Transformer le besoin en un produit fonctionnel, robuste et agréable à utiliser.</p>
+      <ul><li>Applications web et plateformes SaaS</li><li>Applications mobiles et interfaces adaptatives</li><li>API, bases de données et intégrations</li><li>Outils métier et automatisation de processus</li></ul>
+      <div class="service-deliverable"><b>Livrables possibles</b><span>Application testable, code source documenté et composants réutilisables.</span></div>
+      <a class="service-card-link" href="/contact">Construire une solution <span>↗</span></a>
+    </article>
+    <article class="service-card rv" id="intelligence-artificielle">
+      <div class="service-card-top"><span class="service-index">03</span><span class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="3"/><path d="M9 9h6v6H9zM9 1v4m6-4v4M9 19v4m6-4v4M1 9h4m-4 6h4m14-6h4m-4 6h4"/></svg></span></div>
+      <h3>IA &amp; automatisation</h3><p class="service-card-intro">Réduire les tâches répétitives et transformer les données en aide à la décision.</p>
+      <ul><li>Intégration raisonnée de modèles IA</li><li>Classification, prévision et analyse de données</li><li>Assistants métier et recherche documentaire</li><li>Automatisation de tâches et flux de travail</li></ul>
+      <div class="service-deliverable"><b>Livrables possibles</b><span>Prototype évalué, workflow automatisé, indicateurs et limites documentées.</span></div>
+      <a class="service-card-link" href="/contact">Explorer un cas d'usage IA <span>↗</span></a>
+    </article>
+    <article class="service-card rv" id="deploiement">
+      <div class="service-card-top"><span class="service-index">04</span><span class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 17v3h16v-3"/></svg></span></div>
+      <h3>Déploiement &amp; intégration</h3><p class="service-card-intro">Mettre le produit à disposition dans un environnement préparé pour la production.</p>
+      <ul><li>Configuration des environnements et hébergement</li><li>Intégration continue et déploiement maîtrisé</li><li>Connexion aux outils et services existants</li><li>Contrôles de qualité avant livraison</li></ul>
+      <div class="service-deliverable"><b>Livrables possibles</b><span>Version déployée, procédure de livraison et documentation d'exploitation.</span></div>
+      <a class="service-card-link" href="/contact">Préparer le lancement <span>↗</span></a>
+    </article>
+    <article class="service-card rv" id="securite">
+      <div class="service-card-top"><span class="service-index">05</span><span class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 4v3"/></svg></span></div>
+      <h3>Sécurité &amp; qualité</h3><p class="service-card-intro">Intégrer la fiabilité dès la conception plutôt que la traiter comme une finition.</p>
+      <ul><li>Revue de code et contrôles des accès</li><li>Validation des entrées et gestion des erreurs</li><li>Tests fonctionnels et vérifications de régression</li><li>Audit ciblé des risques techniques</li></ul>
+      <div class="service-deliverable"><b>Livrables possibles</b><span>Constats priorisés, corrections proposées et critères de validation.</span></div>
+      <a class="service-card-link" href="/contact">Renforcer la fiabilité <span>↗</span></a>
+    </article>
+    <article class="service-card rv" id="maintenance">
+      <div class="service-card-top"><span class="service-index">06</span><span class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7a7 7 0 0 1-9 9l-6 6-3-3 6-6a7 7 0 0 1 9-9l-4 4 3 3z"/></svg></span></div>
+      <h3>Maintenance &amp; évolution</h3><p class="service-card-intro">Garder le logiciel utile, stable et adapté à l'évolution de l'activité.</p>
+      <ul><li>Correction des anomalies et mises à jour</li><li>Amélioration des performances</li><li>Ajout progressif de fonctionnalités</li><li>Documentation et transfert de connaissances</li></ul>
+      <div class="service-deliverable"><b>Livrables possibles</b><span>Plan d'évolution, corrections vérifiées et base technique mieux maîtrisée.</span></div>
+      <a class="service-card-link" href="/contact">Faire évoluer un produit <span>↗</span></a>
+    </article>
+  </div>
+
+  <div class="services-approach rv">
+    <div><span class="eyebrow">Notre engagement</span><h2>Pas de fonctionnalités pour faire joli. Des choix qui servent votre objectif.</h2><p>Le périmètre, les priorités et le niveau de finition sont définis avec vous. Nous explicitons les compromis, les dépendances et les prochaines étapes avant d'avancer.</p></div>
+    <div class="services-approach-points"><div><b>01 / Comprendre</b><span>Vos objectifs, contraintes et utilisateurs.</span></div><div><b>02 / Construire</b><span>Une solution testable, avec des priorités claires.</span></div><div><b>03 / Faire durer</b><span>Une base maintenable qui peut évoluer.</span></div></div>
+  </div>
+  <div class="services-final-cta rv"><div><span class="eyebrow">Parlons concret</span><h2>Quel résultat souhaitez-vous obtenir ?</h2><p>Présentez-nous votre contexte : nous vous aiderons à identifier la prochaine étape utile.</p></div><a class="btn" href="/contact">Décrire mon besoin <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div>
 </section>
 
 <section class="page" id="p-methode">
