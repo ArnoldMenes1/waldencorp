@@ -25,10 +25,45 @@ h1,h2,h3{font-family:var(--fd);font-weight:800;line-height:1.12;letter-spacing:-
 footer{background:var(--navy);color:#EAF0FF;padding:38px max(5vw,env(safe-area-inset-left));display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}footer p{color:#B4C4E8;font-size:.9rem}footer a{color:#EAF0FF;text-decoration:none;font-size:.92rem;margin-right:14px}footer a:hover{color:var(--sun)}.footlinks{display:flex;flex-wrap:wrap;gap:8px}
 @media(max-width:560px){header{padding:16px 5vw}.brand{font-size:1.05rem}.brand img{width:28px}main{padding:42px 0 64px}footer{flex-direction:column}.card{padding:18px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+/* Navigation unifiée avec la page d'accueil */
+header{position:fixed!important;top:0;left:0;right:0;z-index:50;min-height:76px;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:calc(14px + env(safe-area-inset-top,0px)) max(5vw,env(safe-area-inset-left)) 14px!important}
+header .brand{flex:0 0 auto}
+header .brand img{width:34px;height:auto;display:block}
+header .brand .dark-logo{display:none}
+:root[data-theme="dark"] header .light-logo{display:none}
+:root[data-theme="dark"] header .dark-logo{display:block}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) header .light-logo{display:none}:root:not([data-theme="light"]) header .dark-logo{display:block}}
+header nav.site-nav{display:flex;align-items:center;justify-content:center;gap:4px;flex-wrap:wrap}
+header nav.site-nav a{display:flex;align-items:center;min-height:42px;padding:8px 13px;border-radius:99px;text-decoration:none;font-weight:600;font-size:.92rem;color:var(--ink);white-space:nowrap;transition:background-color .2s,color .2s}
+header nav.site-nav a:hover,header nav.site-nav a:focus-visible{background:var(--card)}
+header .tg{flex:0 0 42px}
+main{padding-top:calc(64px + 78px + env(safe-area-inset-top,0px))!important}
+@media(max-width:940px){
+  header nav.site-nav{position:fixed;left:0;right:0;bottom:0;top:auto;z-index:60;display:flex;flex-wrap:nowrap;justify-content:flex-start;gap:2px;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;background:var(--card);border-top:1px solid var(--line);padding:8px max(8px,env(safe-area-inset-left)) calc(8px + env(safe-area-inset-bottom,0px));box-shadow:0 -8px 24px rgba(11,29,66,.06)}
+  header nav.site-nav::-webkit-scrollbar{display:none}
+  header nav.site-nav a{flex:0 0 auto;min-height:44px;padding:8px 11px;font-size:.82rem}
+  main{padding-bottom:calc(100px + env(safe-area-inset-bottom,0px))!important}
+  footer{padding-bottom:calc(100px + env(safe-area-inset-bottom,0px))!important}
+}
+@media(max-width:560px){header{gap:10px!important}.brand{font-size:1.02rem!important}header .brand img{width:28px}}
+@media(prefers-reduced-motion:reduce){header nav.site-nav a{transition:none}}
+
 </style>
+<script>try{const savedTheme=localStorage.getItem('walden-theme');if(savedTheme==='light'||savedTheme==='dark')document.documentElement.dataset.theme=savedTheme}catch{}</script>
 </head>
 <body>
-<header><a class="brand" href="index.html#/"><img src="Icon_Only_Blue-removebg.png" alt="">Walden Corp</a><button class="tg" id="tg" type="button" aria-label="Changer de thème" title="Changer de thème">◐</button></header>
+<header>
+<a class="brand" href="/" aria-label="Walden Corp, accueil">
+<img src="Icon_Only_Blue-removebg.png" alt="" class="light-logo">
+<img src="logo only bleu beige.png" alt="" class="dark-logo">
+<span>Walden Corp</span>
+</a>
+<nav class="site-nav" aria-label="Navigation principale">
+<a href="/">Accueil</a><a href="/solutions">Solutions</a><a href="/services">Services</a><a href="/methode">Méthode</a><a href="/vision">Vision</a><a href="/contact">Contact</a>
+</nav>
+<button class="tg" id="tg" type="button" aria-label="Changer de thème" title="Changer de thème">◐</button>
+</header>
 <main>
 <nav class="breadcrumb" aria-label="Fil d’Ariane"><a href="index.html#/">Accueil</a> / Politique de cookies</nav>
 <p class="eyebrow">Walden Corp · Informations</p>
@@ -58,6 +93,6 @@ footer{background:var(--navy);color:#EAF0FF;padding:38px max(5vw,env(safe-area-i
 <footer><div><strong>Walden Corp</strong><p>Des idées, livrées en logiciels.</p><p>Dernière mise à jour : 14 octobre 2026</p></div><nav class="footlinks" aria-label="Informations et politiques"><a href="mentions-legales.html">Mentions légales</a><a href="politique-confidentialite.html">Confidentialité</a><a href="politique-cookies.html">Cookies</a><a href="accessibilite.html">Accessibilité</a><a href="mailto:contact@waldencorp.com">Contact</a></nav></footer>
 <script>
 const root=document.documentElement;
-document.getElementById('tg').addEventListener('click',()=>{const dark=matchMedia('(prefers-color-scheme:dark)').matches;const current=root.dataset.theme||(dark?'dark':'light');root.dataset.theme=current==='dark'?'light':'dark'});
+document.getElementById('tg').addEventListener('click',()=>{const dark=matchMedia('(prefers-color-scheme:dark)').matches;const current=root.dataset.theme||(dark?'dark':'light');const next=current==='dark'?'light':'dark';root.dataset.theme=next;try{localStorage.setItem('walden-theme',next)}catch{}});
 </script>
 </body></html>
