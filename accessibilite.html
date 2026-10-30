@@ -49,6 +49,26 @@ main{padding-top:calc(64px + 78px + env(safe-area-inset-top,0px))!important}
 @media(max-width:560px){header{gap:10px!important}.brand{font-size:1.02rem!important}header .brand img{width:28px}}
 @media(prefers-reduced-motion:reduce){header nav.site-nav a{transition:none}}
 
+
+/* Présentation éditoriale des pages institutionnelles */
+main{width:min(1080px,90vw)!important}
+.legal-hero{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(210px,300px);align-items:center;gap:34px;padding:clamp(26px,5vw,54px);margin:0 0 26px;border:1px solid var(--line);border-radius:28px 10px 28px 10px;background:linear-gradient(135deg,color-mix(in srgb,var(--card) 94%,var(--sky) 6%),var(--card));box-shadow:0 18px 48px rgba(11,29,66,.06);overflow:hidden}
+.legal-hero:after{content:"";position:absolute;width:220px;height:220px;right:-100px;top:-120px;border:1px solid color-mix(in srgb,var(--sky) 28%,transparent);border-radius:50%;box-shadow:0 0 0 24px color-mix(in srgb,var(--sky) 5%,transparent),0 0 0 48px color-mix(in srgb,var(--sky) 4%,transparent);pointer-events:none}
+.legal-hero-copy{position:relative;z-index:1}.legal-hero h1{max-width:14ch;margin:10px 0 16px;font-size:clamp(2.35rem,6vw,4.5rem)}
+.legal-hero .intro{max-width:58ch;margin:0;font-size:1.08rem}
+.legal-art{display:grid;place-items:center;min-height:180px;color:var(--navy);background:color-mix(in srgb,var(--sky) 8%,transparent);border:1px solid color-mix(in srgb,var(--sky) 20%,var(--line));border-radius:20px 8px 20px 8px}
+.legal-art svg{width:min(100%,230px);height:auto;overflow:visible}
+.legal-section{position:relative;margin:20px 0;padding:26px clamp(20px,3.5vw,34px);border:1px solid var(--line);border-radius:18px 8px 18px 8px;background:var(--card);box-shadow:0 10px 30px rgba(11,29,66,.035)}
+.legal-section h2{display:flex;align-items:baseline;gap:12px;margin:0 0 16px;padding-bottom:14px;border-bottom:1px solid var(--line);font-size:clamp(1.35rem,3vw,1.8rem)}
+.legal-section h2:before{content:"";width:5px;height:1.15em;flex:0 0 5px;border-radius:8px;background:var(--sky)}
+.legal-section p:last-child,.legal-section ul:last-child,.legal-section ol:last-child,.legal-section .card:last-child{margin-bottom:0}
+.notice{border-left-color:var(--sun);box-shadow:0 8px 24px rgba(11,29,66,.035)}
+.legal-section .card{background:color-mix(in srgb,var(--bg) 52%,var(--card));}
+.actions{padding:12px 0 8px}
+@media(max-width:680px){.legal-hero{grid-template-columns:1fr;gap:18px;padding:25px 22px}.legal-art{min-height:130px}.legal-art svg{width:150px}.legal-section{padding:21px 18px;margin:15px 0}.legal-section h2{margin-bottom:13px}}
+@media(prefers-reduced-motion:no-preference){.legal-hero,.legal-section{animation:legal-enter .55s both}.legal-section:nth-of-type(2){animation-delay:.04s}.legal-section:nth-of-type(3){animation-delay:.08s}@keyframes legal-enter{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}}
+@media(prefers-reduced-motion:reduce){.legal-hero,.legal-section{animation:none}}
+
 </style>
 <script>try{const savedTheme=localStorage.getItem('walden-theme');if(savedTheme==='light'||savedTheme==='dark')document.documentElement.dataset.theme=savedTheme}catch{}</script>
 </head>
@@ -68,8 +88,7 @@ main{padding-top:calc(64px + 78px + env(safe-area-inset-top,0px))!important}
 <nav class="breadcrumb" aria-label="Fil d’Ariane"><a href="/">Accueil</a> / Déclaration d’accessibilité</nav>
 <p class="eyebrow">Walden Corp · Informations</p>
 
-<h1>Déclaration d’accessibilité</h1>
-<p class="intro">Walden Corp souhaite rendre son site et ses logiciels utilisables par le plus grand nombre, y compris les personnes en situation de handicap.</p>
+<section class="legal-hero" aria-labelledby="page-title"><div class="legal-hero-copy"><p class="eyebrow">Walden Corp · Centre d’information</p><h1 id="page-title">Déclaration d’accessibilité</h1><p class="intro">Notre démarche pour rendre les expériences numériques Walden Corp plus accessibles et inclusives.</p></div><div class="legal-art"><svg viewBox="0 0 240 190" role="img" aria-label="Illustration d’accessibilité numérique"><circle cx="119" cy="42" r="15" fill="#FFC233"/><path d="M65 73h108M119 73v78m0-45l-34 40m34-40 34 40" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M65 73l-19 25m128-25 19 25" fill="none" stroke="#4C7DFF" stroke-width="7" stroke-linecap="round"/><circle cx="119" cy="113" r="59" fill="none" stroke="#4C7DFF" stroke-width="2" stroke-dasharray="4 8"/></svg></div></section>
 <div class="notice"><p><strong>État actuel : conformité non évaluée.</strong> Aucune évaluation complète et documentée n’a été fournie pour cette déclaration. Il serait donc inexact d’annoncer une conformité totale ou partielle sans audit. Les éléments ci-dessous décrivent l’engagement et les moyens de signalement en attendant une évaluation.</p></div>
 <h2>1. Engagement</h2>
 <p>Nous visons des interfaces compréhensibles, navigables au clavier, lisibles avec des technologies d’assistance et utilisables sur différents écrans. Les problèmes signalés doivent être examinés et priorisés selon leur impact sur l’accès au contenu ou aux fonctionnalités.</p>
@@ -93,5 +112,18 @@ main{padding-top:calc(64px + 78px + env(safe-area-inset-top,0px))!important}
 <script>
 const root=document.documentElement;
 document.getElementById('tg').addEventListener('click',()=>{const dark=matchMedia('(prefers-color-scheme:dark)').matches;const current=root.dataset.theme||(dark?'dark':'light');const next=current==='dark'?'light':'dark';root.dataset.theme=next;try{localStorage.setItem('walden-theme',next)}catch{}});
+</script>
+
+<script>
+/* Regroupe les rubriques pour une lecture institutionnelle plus claire. */
+document.querySelectorAll('main > h2').forEach(heading=>{
+ const panel=document.createElement('section');
+ panel.className='legal-section';
+ heading.before(panel);
+ panel.append(heading);
+ while(panel.nextElementSibling && panel.nextElementSibling.tagName!=='H2' && !panel.nextElementSibling.classList.contains('actions')){
+   panel.append(panel.nextElementSibling);
+ }
+});
 </script>
 </body></html>
