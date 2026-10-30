@@ -65,7 +65,7 @@ main{padding-top:calc(64px + 78px + env(safe-area-inset-top,0px))!important}
 <button class="tg" id="tg" type="button" aria-label="Changer de thème" title="Changer de thème">◐</button>
 </header>
 <main>
-<nav class="breadcrumb" aria-label="Fil d’Ariane"><a href="index.html#/">Accueil</a> / Politique de cookies</nav>
+<nav class="breadcrumb" aria-label="Fil d’Ariane"><a href="/">Accueil</a> / Politique de cookies</nav>
 <p class="eyebrow">Walden Corp · Informations</p>
 
 <h1>Politique de cookies</h1>
@@ -88,9 +88,9 @@ main{padding-top:calc(64px + 78px + env(safe-area-inset-top,0px))!important}
 <h2>6. Contact</h2>
 <p>Pour poser une question sur les cookies ou les traceurs, écrivez à <a href="mailto:contact@waldencorp.com">contact@waldencorp.com</a>.</p>
 
-<div class="actions"><a class="btn" href="index.html#/">Retour à l’accueil</a><a class="btn secondary" href="mailto:contact@waldencorp.com">Nous contacter</a></div>
+<div class="actions"><a class="btn" href="/">Retour à l’accueil</a><a class="btn secondary" href="mailto:contact@waldencorp.com">Nous contacter</a></div>
 </main>
-<footer><div><strong>Walden Corp</strong><p>Des idées, livrées en logiciels.</p><p>Dernière mise à jour : 14 octobre 2026</p></div><nav class="footlinks" aria-label="Informations et politiques"><a href="mentions-legales.html">Mentions légales</a><a href="politique-confidentialite.html">Confidentialité</a><a href="politique-cookies.html">Cookies</a><a href="accessibilite.html">Accessibilité</a><a href="mailto:contact@waldencorp.com">Contact</a></nav></footer>
+<footer><div><strong>Walden Corp</strong><p>Des idées, livrées en logiciels.</p><p>Dernière mise à jour : 14 octobre 2026</p></div><nav class="footlinks" aria-label="Informations et politiques"><a href="/mentions-legales">Mentions légales</a><a href="/confidentialite">Confidentialité</a><a href="/cookies">Cookies</a><a href="/accessibilite">Accessibilité</a><a href="mailto:contact@waldencorp.com">Contact</a></nav></footer>
 <script>
 const root=document.documentElement;
 document.getElementById('tg').addEventListener('click',()=>{const dark=matchMedia('(prefers-color-scheme:dark)').matches;const current=root.dataset.theme||(dark?'dark':'light');const next=current==='dark'?'light':'dark';root.dataset.theme=next;try{localStorage.setItem('walden-theme',next)}catch{}});
