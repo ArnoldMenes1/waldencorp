@@ -49,6 +49,26 @@ main{padding-top:calc(64px + 78px + env(safe-area-inset-top,0px))!important}
 @media(max-width:560px){header{gap:10px!important}.brand{font-size:1.02rem!important}header .brand img{width:28px}}
 @media(prefers-reduced-motion:reduce){header nav.site-nav a{transition:none}}
 
+
+/* Présentation éditoriale des pages institutionnelles */
+main{width:min(1080px,90vw)!important}
+.legal-hero{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(210px,300px);align-items:center;gap:34px;padding:clamp(26px,5vw,54px);margin:0 0 26px;border:1px solid var(--line);border-radius:28px 10px 28px 10px;background:linear-gradient(135deg,color-mix(in srgb,var(--card) 94%,var(--sky) 6%),var(--card));box-shadow:0 18px 48px rgba(11,29,66,.06);overflow:hidden}
+.legal-hero:after{content:"";position:absolute;width:220px;height:220px;right:-100px;top:-120px;border:1px solid color-mix(in srgb,var(--sky) 28%,transparent);border-radius:50%;box-shadow:0 0 0 24px color-mix(in srgb,var(--sky) 5%,transparent),0 0 0 48px color-mix(in srgb,var(--sky) 4%,transparent);pointer-events:none}
+.legal-hero-copy{position:relative;z-index:1}.legal-hero h1{max-width:14ch;margin:10px 0 16px;font-size:clamp(2.35rem,6vw,4.5rem)}
+.legal-hero .intro{max-width:58ch;margin:0;font-size:1.08rem}
+.legal-art{display:grid;place-items:center;min-height:180px;color:var(--navy);background:color-mix(in srgb,var(--sky) 8%,transparent);border:1px solid color-mix(in srgb,var(--sky) 20%,var(--line));border-radius:20px 8px 20px 8px}
+.legal-art svg{width:min(100%,230px);height:auto;overflow:visible}
+.legal-section{position:relative;margin:20px 0;padding:26px clamp(20px,3.5vw,34px);border:1px solid var(--line);border-radius:18px 8px 18px 8px;background:var(--card);box-shadow:0 10px 30px rgba(11,29,66,.035)}
+.legal-section h2{display:flex;align-items:baseline;gap:12px;margin:0 0 16px;padding-bottom:14px;border-bottom:1px solid var(--line);font-size:clamp(1.35rem,3vw,1.8rem)}
+.legal-section h2:before{content:"";width:5px;height:1.15em;flex:0 0 5px;border-radius:8px;background:var(--sky)}
+.legal-section p:last-child,.legal-section ul:last-child,.legal-section ol:last-child,.legal-section .card:last-child{margin-bottom:0}
+.notice{border-left-color:var(--sun);box-shadow:0 8px 24px rgba(11,29,66,.035)}
+.legal-section .card{background:color-mix(in srgb,var(--bg) 52%,var(--card));}
+.actions{padding:12px 0 8px}
+@media(max-width:680px){.legal-hero{grid-template-columns:1fr;gap:18px;padding:25px 22px}.legal-art{min-height:130px}.legal-art svg{width:150px}.legal-section{padding:21px 18px;margin:15px 0}.legal-section h2{margin-bottom:13px}}
+@media(prefers-reduced-motion:no-preference){.legal-hero,.legal-section{animation:legal-enter .55s both}.legal-section:nth-of-type(2){animation-delay:.04s}.legal-section:nth-of-type(3){animation-delay:.08s}@keyframes legal-enter{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}}
+@media(prefers-reduced-motion:reduce){.legal-hero,.legal-section{animation:none}}
+
 </style>
 <script>try{const savedTheme=localStorage.getItem('walden-theme');if(savedTheme==='light'||savedTheme==='dark')document.documentElement.dataset.theme=savedTheme}catch{}</script>
 </head>
@@ -68,8 +88,7 @@ main{padding-top:calc(64px + 78px + env(safe-area-inset-top,0px))!important}
 <nav class="breadcrumb" aria-label="Fil d’Ariane"><a href="/">Accueil</a> / Politique de cookies</nav>
 <p class="eyebrow">Walden Corp · Informations</p>
 
-<h1>Politique de cookies</h1>
-<p class="intro">Cette page explique ce que sont les cookies et comment Walden Corp prévoit de gérer les traceurs sur son site et ses produits.</p>
+<section class="legal-hero" aria-labelledby="page-title"><div class="legal-hero-copy"><p class="eyebrow">Walden Corp · Centre d’information</p><h1 id="page-title">Politique de cookies</h1><p class="intro">Un aperçu clair des traceurs, de leurs finalités et des choix disponibles lors de la navigation.</p></div><div class="legal-art"><svg viewBox="0 0 240 190" role="img" aria-label="Illustration des préférences de traceurs"><path d="M119 30c-42 0-72 28-72 66 0 40 31 69 73 69 36 0 63-23 63-56 0-11-5-18-15-20-14-3-17-12-12-23 8-19-9-36-37-36z" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="91" cy="81" r="8" fill="#4C7DFF"/><circle cx="129" cy="65" r="7" fill="#FFC233"/><circle cx="151" cy="105" r="9" fill="#4C7DFF"/><circle cx="101" cy="128" r="6" fill="#FFC233"/><path d="M178 35l8 8 16-18" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></div></section>
 <div class="notice"><p><strong>État de l’inventaire :</strong> dans le code source de la page d’accueil consulté pour cette mise à jour, aucun mécanisme explicite de dépôt de cookie publicitaire ou d’analytique n’a été identifié. Le site charge toutefois des ressources externes (notamment les polices Google Fonts) et utilise des services techniques pour les formulaires. Cela ne suffit pas à conclure à lui seul qu’aucun cookie ou identifiant ne peut être utilisé par tous les services. Un contrôle du navigateur et des configurations de production reste nécessaire.</p></div>
 <h2>1. Qu’est-ce qu’un cookie ou traceur ?</h2>
 <p>Un cookie est un petit fichier stocké par le navigateur. D’autres technologies peuvent mémoriser un identifiant ou observer une interaction. Selon leur finalité et la loi applicable, ces technologies peuvent nécessiter une information préalable et, dans certains cas, un consentement.</p>
@@ -94,5 +113,18 @@ main{padding-top:calc(64px + 78px + env(safe-area-inset-top,0px))!important}
 <script>
 const root=document.documentElement;
 document.getElementById('tg').addEventListener('click',()=>{const dark=matchMedia('(prefers-color-scheme:dark)').matches;const current=root.dataset.theme||(dark?'dark':'light');const next=current==='dark'?'light':'dark';root.dataset.theme=next;try{localStorage.setItem('walden-theme',next)}catch{}});
+</script>
+
+<script>
+/* Regroupe les rubriques pour une lecture institutionnelle plus claire. */
+document.querySelectorAll('main > h2').forEach(heading=>{
+ const panel=document.createElement('section');
+ panel.className='legal-section';
+ heading.before(panel);
+ panel.append(heading);
+ while(panel.nextElementSibling && panel.nextElementSibling.tagName!=='H2' && !panel.nextElementSibling.classList.contains('actions')){
+   panel.append(panel.nextElementSibling);
+ }
+});
 </script>
 </body></html>
