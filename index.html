@@ -239,7 +239,7 @@ header{padding-left:max(5vw,env(safe-area-inset-left));padding-right:max(5vw,env
 .services-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .service-card{display:flex;flex-direction:column;min-width:0;padding:clamp(20px,2.5vw,30px);border:1px solid var(--line);border-radius:24px 6px 24px 6px;background:var(--card);box-shadow:0 14px 36px color-mix(in srgb,var(--navy) 5%,transparent);transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
 .service-card:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--sky) 55%,var(--line));box-shadow:0 22px 48px color-mix(in srgb,var(--navy) 10%,transparent)}
-.service-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}.service-index{font-size:.76rem;font-weight:800;letter-spacing:.12em;color:var(--mut)}.service-icon{display:grid;place-items:center;width:48px;height:48px;border-radius:15px;background:color-mix(in srgb,var(--sky) 13%,var(--bg));color:var(--sky)}.service-icon svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.service-card-top{display:flex;flex-direction:row-reverse;align-items:center;justify-content:space-between;margin-bottom:22px}.service-index{font-size:.76rem;font-weight:800;letter-spacing:.12em;color:var(--mut)}.service-icon{display:grid;place-items:center;width:48px;height:48px;border-radius:15px;background:color-mix(in srgb,var(--sky) 13%,var(--bg));color:var(--sky)}.service-icon svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .service-card h3{font-size:clamp(1.22rem,1.8vw,1.5rem);margin:0 0 10px}.service-card-intro{font-size:.94rem;min-height:3.2em;margin:0 0 16px;color:var(--mut)}
 .service-card ul{list-style:none;padding:0;margin:0 0 20px;display:grid;gap:10px}.service-card li{position:relative;padding-left:20px;font-size:.88rem;line-height:1.5}.service-card li:before{content:"";position:absolute;left:0;top:.52em;width:8px;height:8px;border-radius:2px;background:var(--sun);transform:rotate(45deg)}
 .service-deliverable{margin-top:auto;padding:14px;border-radius:12px;background:color-mix(in srgb,var(--bg) 82%,var(--sky) 18%);border:1px solid color-mix(in srgb,var(--sky) 14%,var(--line))}.service-deliverable b,.service-deliverable span{display:block}.service-deliverable b{font-size:.78rem;margin-bottom:5px}.service-deliverable span{font-size:.8rem;line-height:1.5;color:var(--mut)}
@@ -636,7 +636,7 @@ header{padding-left:max(5vw,env(safe-area-inset-left));padding-right:max(5vw,env
     <span class="eyebrow"><span class="status-dot"></span> À l'origine de Walden Corp</span>
     <h1 class="hl">Une vision claire. <span class="founder-highlight">Des solutions fiables.</span></h1>
     <p class="founder-lead">Walden Corp est née d'une conviction : les logiciels doivent résoudre de vrais problèmes, rester fiables dans le temps et accompagner la croissance de ceux qui les utilisent.</p>
-    <p class="founder-lead">Je construis cette entreprise avec une approche d'ingénierie logicielle centrée sur la qualité, la sécurité, la maintenabilité et l'utilité concrète.</p>
+    <p class="founder-lead">Je suis <strong>Arnold Menemene</strong>, fondateur de Walden Corp. Je construis cette entreprise avec une approche d'ingénierie logicielle centrée sur la qualité, la sécurité, la maintenabilité et l'utilité concrète.</p>
     <div class="founder-actions"><a class="btn" href="/contact">Parler d'un projet</a><a class="btn g" href="/methode">Découvrir notre méthode</a></div>
     <div class="founder-principles"><div><b>Ingénierie</b><span>Des bases solides</span></div><div><b>Fiabilité</b><span>Des produits durables</span></div><div><b>Utilité</b><span>Un impact concret</span></div></div>
   </div>
@@ -684,7 +684,7 @@ header{padding-left:max(5vw,env(safe-area-inset-left));padding-right:max(5vw,env
   <div class="contact-form-card">
     <div class="form-heading"><span class="form-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 7l8 6 8-6"/></svg></span><div><h2>Contactez-nous</h2><p>Les champs marqués d’un * sont obligatoires.</p></div></div>
     <form id="f">
-      <label for="contact-name">Nom complet <span>*</span><span class="field-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-4 2.8-6 7-6s7 2 7 6"/></svg><input id="contact-name" name="n" required autocomplete="name" placeholder="Ex. Alex Mbuyi"></span></label>
+      <label for="contact-name">Nom complet <span>*</span><span class="field-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-4 2.8-6 7-6s7 2 7 6"/></svg><input id="contact-name" name="n" required autocomplete="name" placeholder="Ex. Alex Miller"></span></label>
       <label for="contact-email">Adresse e-mail <span>*</span><span class="field-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg><input id="contact-email" name="e" type="email" required autocomplete="email" placeholder="vous@entreprise.com"></span></label>
       <label for="contact-type">Type de projet<span class="field-wrap select-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 8h8M8 12h5"/></svg><select id="contact-type" name="t"><option>Application web</option><option>Application mobile</option><option>Plateforme SaaS</option><option>Solution IA</option><option>Logiciel sur mesure</option><option>Autre</option></select></span></label>
       <label for="contact-message">Votre message <span>*</span><textarea id="contact-message" name="m" rows="5" required placeholder="Parlez-nous de votre objectif, de vos utilisateurs et de ce que vous souhaitez améliorer…"></textarea></label>
@@ -702,7 +702,7 @@ header{padding-left:max(5vw,env(safe-area-inset-left));padding-right:max(5vw,env
 <section class="page" id="p-confirme"><h1 class="hl">Abonnement confirmé</h1><p style="margin:24px 0 32px;font-size:1.15rem">Bienvenue chez Walden Corp ! Vous recevrez nos actualités produits et nos articles techniques. Vous pouvez vous désinscrire à tout moment.</p><a class="btn" href="/">Retour à l'accueil</a></section>
 <section class="page lg" id="p-legal">
 <h1 class="hl">Informations légales</h1>
-<h2 id="mentions">Mentions légales</h2><p>Éditeur : Walden Corp. Fondateur : Arnold Menemene V. Forme juridique, capital, numéro d'immatriculation, siège social et directeur de la publication : à compléter. Hébergeur : à compléter.</p>
+<h2 id="mentions">Mentions légales</h2><p>Éditeur : Walden Corp. Fondateur : Arnold Menemene. Forme juridique, capital, numéro d'immatriculation, siège social et directeur de la publication : à compléter. Hébergeur : à compléter.</p>
 <h2 id="confidentialite">Confidentialité</h2><p>Les données saisies dans les formulaires servent uniquement à répondre à votre demande. Responsable du traitement, durée de conservation et droits d'accès : à compléter.</p>
 <h2 id="cookies">Cookies</h2><p>Ce site n'utilise pas de cookies de suivi. Cette section sera mise à jour si des outils de mesure d'audience sont ajoutés.</p>
 <h2 id="accessibilite">Accessibilité</h2><p>Le site vise un bon niveau d'accessibilité : navigation au clavier, contrastes lisibles, animations réduites si votre système le demande. Contact pour signaler un problème : contact@waldencorp.com.</p>
@@ -711,7 +711,7 @@ header{padding-left:max(5vw,env(safe-area-inset-left));padding-right:max(5vw,env
 <footer class="ft"><div class="fg">
 <div class="fb"><a class="brand" href="/"><img src="logo only bleu beige.png" alt="Logo Walden Corp">Walden Corp</a>
 <p style="margin-top:14px">Software Factory moderne : logiciels professionnels, IA et automatisation.</p>
-<p style="margin-top:8px; font-weight: 500; color: var(--sun);">Fondé par Arnold Menemene V.</p>
+<p style="margin-top:8px; font-weight: 500; color: var(--sun);">Fondé par Arnold Menemene.</p>
 <p class="fq">Transformer des idées en produits numériques performants.</p></div>
 <div><h4>Solutions</h4><a href="/solutions/apps">Applications web, mobile, desktop</a><a href="/solutions/saas">Plateformes SaaS</a><a href="/solutions/metiers">Logiciels métiers, CRM &amp; ERP</a><a href="/solutions/ia">Solutions IA</a><a href="/solutions/api">API &amp; services cloud</a><a href="/solutions/portails">E-commerce et portails</a></div>
 <div><h4>Services</h4><a href="/services/concevoir">Étude des besoins</a><a href="/services/concevoir">Architecture et UX/UI</a><a href="/services/construire">Développement full stack</a><a href="/services/construire">Cybersécurité et audit</a><a href="/services/durer">Maintenance et support</a><a href="/services/transmettre">Formation et conseil</a></div>
