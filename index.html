@@ -870,7 +870,7 @@ function show(){
   const id=r===''?'p-':detailProduct?'p-dsar-pilot':Object.hasOwn(T,r)?'p-'+r:'p-404',p=document.getElementById(id);
   pages.forEach(x=>x.classList.toggle('on',x===p));
   document.querySelectorAll('#nav a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')===(r ? '/'+r : '/')));
-  document.title=(id==='p-404'?'Page introuvable':T[r]||'')+(id==='p-'&&!T[r]?'':' — ')+'Walden Corp';
+  document.title=(id==='p-404'?'Page introuvable':detailProduct?'DSAR Pilot':T[r]||'')+(id==='p-'&&!T[r]?'':' — ')+'Walden Corp';
   p.querySelectorAll('.hl').forEach(h=>{h.dataset.s='';split(h)});
   io&&io.disconnect();
   io=new IntersectionObserver(es=>es.forEach(e=>{
