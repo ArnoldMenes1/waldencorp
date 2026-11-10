@@ -872,7 +872,8 @@ for(const p of P){const g=p.k+p.w;if(g>.02){x.fillStyle=p.k>.35?'#FFC233':'rgba(
 function loop(t){draw(t/1000);requestAnimationFrame(loop)}
 size();addEventListener('resize',size);if(!rm)requestAnimationFrame(loop);
 addEventListener('pointermove',e=>{m.x=e.clientX;m.y=e.clientY;document.querySelectorAll('.mk').forEach(k=>{k.style.setProperty('--mx',(e.clientX/W-.5).toFixed(3));k.style.setProperty('--my',(e.clientY/H-.5).toFixed(3))})});
-document.addEventListener('pointerleave',()=>{m.x=m.y=-999});
+document.addEventListener('pointerleave',()=>{m.x=m.y=-999;document.querySelectorAll('.product-visual').forEach(v=>{v.style.setProperty('--tilt-x','0deg');v.style.setProperty('--tilt-y','0deg')})});
+document.querySelectorAll('.product-visual').forEach(v=>{v.addEventListener('pointermove',e=>{if(e.pointerType!=='mouse')return;const r=v.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;v.style.setProperty('--tilt-x',(x*7).toFixed(2)+'deg');v.style.setProperty('--tilt-y',(y*-6).toFixed(2)+'deg')});v.addEventListener('pointerleave',()=>{v.style.setProperty('--tilt-x','0deg');v.style.setProperty('--tilt-y','0deg')})});
 addEventListener('pointerup',e=>{if(e.pointerType==='touch')setTimeout(()=>{m.x=m.y=-999},600)});
 })();
 let failed=false;
