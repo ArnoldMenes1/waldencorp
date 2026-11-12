@@ -409,6 +409,63 @@ header{padding-left:max(5vw,env(safe-area-inset-left));padding-right:max(5vw,env
 @media(max-width:900px){.dsar-detail-hero,.dsar-detail-workflow,.dsar-detail-roadmap{grid-template-columns:1fr}.dsar-detail-art{min-height:330px}.dsar-detail-feature-grid{grid-template-columns:repeat(2,1fr)}.dsar-pricing-grid{grid-template-columns:1fr 1fr}.dsar-pricing-grid article:last-child{grid-column:1/-1}}
 @media(max-width:560px){.dsar-detail-hero{gap:12px}.dsar-detail-art{min-height:260px}.dsar-detail-emblem{width:130px;height:130px}.dsar-detail-emblem span{font-size:4rem}.dsar-detail-chip{font-size:.55rem;padding:7px 10px}.dsar-detail-feature-grid,.dsar-flow,.dsar-pricing-grid{grid-template-columns:1fr}.dsar-pricing-grid article:last-child{grid-column:auto}.dsar-detail-bottom{align-items:flex-start;flex-direction:column}.dsar-detail-bottom .btn{width:100%;justify-content:center}}
 @media(prefers-reduced-motion:reduce){.dsar-detail-orbit,.dsar-detail-emblem{animation:none!important}.dsar-detail-feature-grid article,.dsar-pricing-grid article{transition:none!important}}
+
+/* CTRL-TECH — Walden Corp product case study */
+.ctrltech-feature{--ct-ink:#14232B;--ct-orange:#D96B45;border-color:color-mix(in srgb,#D96B45 28%,var(--line));background:linear-gradient(135deg,color-mix(in srgb,#D96B45 7%,var(--card)),var(--card) 62%)}
+.ctrltech-feature:before{border-color:rgba(217,107,69,.14)}
+.ctrltech-mark{display:grid;place-items:center;flex:none;width:42px;height:42px;border-radius:11px;background:#14232B;color:#F3F0E8;font:700 .78rem var(--fd);letter-spacing:-.06em}
+.ctrltech-feature .product-status{color:#B65A39}
+.ctrltech-feature .product-status>span{background:#D96B45;box-shadow:0 0 0 5px rgba(217,107,69,.13)}
+.ctrltech-feature h2 span{color:#D96B45}
+.ctrltech-feature .product-tags span{border-color:rgba(217,107,69,.25);background:rgba(217,107,69,.06)}
+.ctrltech-feature .product-cta{background:#14232B;color:#F3F0E8}
+.ctrltech-feature .product-cta:hover{box-shadow:0 10px 0 -2px #D96B45}
+.ctrltech-preview{position:relative;min-height:340px;padding:15px;border:1px solid #cbd2c9;border-radius:17px;background:#F3F0E8;color:#14232B;box-shadow:0 28px 65px rgba(20,35,43,.16);overflow:hidden}
+.ctrltech-preview-top{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-bottom:13px;border-bottom:1px solid rgba(20,35,43,.13);font:700 .6rem var(--fm);letter-spacing:.1em}
+.ctrltech-preview-brand{display:flex;align-items:center;gap:7px}.ctrltech-preview-brand b{display:grid;place-items:center;width:25px;height:25px;border-radius:7px;background:#14232B;color:#F3F0E8}
+.ctrltech-preview-search{width:34%;padding:7px 9px;border:1px solid rgba(20,35,43,.13);border-radius:5px;color:#78837f;font: .52rem var(--fb)}
+.ctrltech-preview-body{display:grid;grid-template-columns:86px 1fr;gap:12px;padding-top:14px}
+.ctrltech-preview-side{display:grid;align-content:start;gap:9px}.ctrltech-preview-side span{height:7px;border-radius:5px;background:#d8ddd5}.ctrltech-preview-side span:first-child{width:70%;background:#D96B45}
+.ctrltech-preview-main small{font:600 .48rem var(--fm);letter-spacing:.12em;color:#B65A39}
+.ctrltech-preview-main h3{margin:7px 0 12px;font:700 1.18rem/1 var(--fd);letter-spacing:-.05em;color:#14232B}
+.ctrltech-preview-products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.ctrltech-preview-card{min-width:0;padding:8px;background:#e8e5dc;border:1px solid rgba(20,35,43,.08)}
+.ctrltech-device{height:76px;display:grid;place-items:center;background:linear-gradient(145deg,#d7ded5,#c8d1c9);margin-bottom:7px}
+.ctrltech-device:before{content:"";display:block;width:28px;height:48px;border:3px solid #26373b;border-radius:6px;background:linear-gradient(145deg,#7c9890,#d7c7a7);box-shadow:7px 6px 0 -3px #14232B}
+.ctrltech-preview-card:nth-child(2) .ctrltech-device:before{width:52px;height:35px;border-radius:4px;background:linear-gradient(145deg,#b8c5ba,#e6d9b9)}
+.ctrltech-preview-card:nth-child(3) .ctrltech-device:before{width:36px;height:42px;border-radius:5px;background:linear-gradient(145deg,#e5e4d9,#9aaca2)}
+.ctrltech-preview-card i,.ctrltech-preview-card b{display:block}.ctrltech-preview-card i{height:5px;width:75%;background:#aab4ac;margin-bottom:5px}.ctrltech-preview-card b{font:700 .55rem var(--fm);color:#14232B}
+.ctrltech-preview-label{position:absolute;right:13px;bottom:12px;padding:7px 9px;background:#14232B;color:#F3F0E8;font: .48rem var(--fm);letter-spacing:.1em}
+.ctrltech-detail-hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(300px,.95fr);gap:clamp(28px,5vw,70px);align-items:center;padding:20px 0 62px}
+.ctrltech-detail-copy{min-width:0}.ctrltech-back{display:inline-flex;margin-bottom:24px;color:var(--mut);font-size:.84rem;font-weight:700;text-decoration:none}.ctrltech-back:hover{color:var(--sky)}
+.ctrltech-detail-copy .product-brandline{margin-bottom:20px}.ctrltech-detail-copy .product-status{color:#B65A39}
+.ctrltech-detail-copy h1{font-size:clamp(3.2rem,7vw,6rem);letter-spacing:-.07em;margin:0 0 12px}.ctrltech-detail-copy h1 span{color:#D96B45}
+.ctrltech-detail-tagline{font:700 clamp(1.2rem,2.2vw,1.65rem)/1.3 var(--fd);max-width:28ch;margin:0 0 18px;color:var(--ink)}
+.ctrltech-detail-copy>p:not(.ctrltech-detail-tagline){max-width:62ch;color:var(--mut);font-size:1rem;line-height:1.85}
+.ctrltech-detail-actions{display:flex;flex-wrap:wrap;gap:10px;margin:25px 0 14px}.ctrltech-detail-actions .btn{display:inline-flex;align-items:center;gap:9px}
+.ctrltech-detail-note{padding:13px 15px;margin-top:18px;border-left:3px solid #D96B45;background:color-mix(in srgb,#D96B45 8%,var(--card));color:var(--mut);font-size:.82rem;line-height:1.7}
+.ctrltech-detail-art{position:relative;min-height:380px;display:grid;place-items:center;isolation:isolate}
+.ctrltech-detail-art:before,.ctrltech-detail-art:after{content:"";position:absolute;border:1px solid rgba(217,107,69,.25);border-radius:50%;width:88%;aspect-ratio:1;z-index:-1;animation:ctrltech-orbit 28s linear infinite}
+.ctrltech-detail-art:after{width:110%;border-style:dashed;animation-direction:reverse}
+.ctrltech-detail-art .ctrltech-preview{width:100%;transform:rotate(-3deg);animation:ctrltech-float 5s ease-in-out infinite}
+.ctrltech-detail-art-note{position:absolute;bottom:0;right:2%;font:700 .58rem var(--fm);letter-spacing:.15em;color:var(--mut)}
+.ctrltech-detail-intro{max-width:850px;margin:10px auto 42px;text-align:center}.ctrltech-detail-intro h2{margin:14px 0;font-size:clamp(2rem,4vw,3.3rem);letter-spacing:-.05em}.ctrltech-detail-intro p{margin:auto;max-width:72ch;line-height:1.85}
+.ctrltech-detail-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:30px 0 62px}
+.ctrltech-detail-grid article{padding:23px;border:1px solid var(--line);border-radius:17px 5px 17px 5px;background:var(--card)}
+.ctrltech-detail-grid article>span{font:700 .67rem var(--fm);letter-spacing:.12em;color:#D96B45}
+.ctrltech-detail-grid h3{margin:17px 0 8px;font-size:1.1rem}.ctrltech-detail-grid p{color:var(--mut);font-size:.88rem;line-height:1.75}
+.ctrltech-process{display:grid;grid-template-columns:.9fr 1.1fr;gap:35px;align-items:center;padding:clamp(24px,4vw,42px);border:1px solid var(--line);border-radius:22px;background:color-mix(in srgb,#D96B45 5%,var(--card));margin:0 0 42px}
+.ctrltech-process h2{font-size:clamp(1.8rem,3.5vw,2.8rem);letter-spacing:-.05em;margin:12px 0}.ctrltech-process p{line-height:1.8;font-size:.92rem}
+.ctrltech-process-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.ctrltech-process-steps div{padding:15px;border:1px solid var(--line);background:var(--card);border-radius:11px}
+.ctrltech-process-steps i{display:block;color:#D96B45;font:700 .7rem var(--fm);font-style:normal}.ctrltech-process-steps b{display:block;margin:7px 0 3px;font-size:.92rem}.ctrltech-process-steps span{display:block;color:var(--mut);font-size:.77rem;line-height:1.6}
+.ctrltech-detail-bottom{display:flex;align-items:center;justify-content:space-between;gap:24px;margin:30px 0 25px;padding:clamp(24px,4vw,40px);border-radius:22px;background:var(--navy);color:#fff}
+.ctrltech-detail-bottom .eyebrow{color:#bdcfff}.ctrltech-detail-bottom h2{margin:10px 0;font-size:clamp(1.6rem,3vw,2.4rem);color:#fff}.ctrltech-detail-bottom p{color:#d5dff1;max-width:55ch;font-size:.9rem;line-height:1.7}.ctrltech-detail-bottom .btn{white-space:nowrap;background:#fff;color:var(--navy);border-color:#fff}
+@keyframes ctrltech-orbit{to{transform:rotate(360deg)}}@keyframes ctrltech-float{50%{transform:rotate(0deg) translateY(-8px)}}
+@media(max-width:900px){.ctrltech-detail-hero{grid-template-columns:1fr}.ctrltech-detail-art{width:100%;max-width:620px;margin:auto}.ctrltech-process{grid-template-columns:1fr}.ctrltech-detail-bottom{align-items:flex-start;flex-direction:column}}
+@media(max-width:640px){.ctrltech-detail-hero{padding-top:8px;padding-bottom:42px}.ctrltech-detail-art{min-height:290px}.ctrltech-preview{min-height:280px;padding:11px}.ctrltech-preview-body{grid-template-columns:62px 1fr;gap:8px}.ctrltech-preview-products{gap:5px}.ctrltech-device{height:62px}.ctrltech-preview-card{padding:5px}.ctrltech-detail-grid{grid-template-columns:1fr}.ctrltech-detail-grid article{padding:20px}.ctrltech-process{padding:22px 18px}.ctrltech-process-steps{grid-template-columns:1fr 1fr}.ctrltech-detail-actions{display:grid}.ctrltech-detail-actions .btn{justify-content:center}.ctrltech-detail-bottom{padding:24px 20px}}
+@media(prefers-reduced-motion:reduce){.ctrltech-detail-art:before,.ctrltech-detail-art:after,.ctrltech-detail-art .ctrltech-preview{animation:none!important;transition:none!important}}
+
 </style>
 <script>try{const savedTheme=localStorage.getItem('walden-theme');if(savedTheme==='light'||savedTheme==='dark')document.documentElement.dataset.theme=savedTheme}catch{}</script>
 </head>
@@ -568,6 +625,28 @@ header{padding-left:max(5vw,env(safe-area-inset-left));padding-right:max(5vw,env
     </div>
   </article>
 
+
+  <article class="product-feature ctrltech-feature rv" id="ctrl-tech">
+    <div class="product-feature-copy">
+      <div class="product-brandline"><span class="ctrltech-mark" aria-hidden="true">CT</span><span>WALDEN CORP <i>/</i> PRODUCT 002</span></div>
+      <div class="product-status"><span></span> RÉALISATION E-COMMERCE · EN FINALISATION</div>
+      <h2>Ctrl-<span>Tech</span></h2>
+      <p class="product-tagline">Une expérience e-commerce conçue pour simplifier le choix et la commande.</p>
+      <p class="product-description">Walden Corp a conçu et développé la plateforme e-commerce de Ctrl-Tech : une boutique en ligne structurée autour d'un catalogue dynamique, d'une navigation claire et d'outils pensés pour accompagner le parcours client.</p>
+      <div class="product-tags"><span>E-commerce</span><span>Catalogue dynamique</span><span>Espace client</span><span>Administration</span></div>
+      <a class="btn product-cta" href="/produits/ctrl-tech">Découvrir la réalisation <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+      <p class="product-availability-note">Les parcours de commande et les opérations d'administration sont en phase de validation avant l'ouverture complète.</p>
+    </div>
+    <div class="product-visual-wrap">
+      <div class="ctrltech-preview" role="img" aria-label="Aperçu conceptuel de la boutique e-commerce Ctrl-Tech">
+        <div class="ctrltech-preview-top"><div class="ctrltech-preview-brand"><b>CT</b> CTRL-TECH</div><span class="ctrltech-preview-search">RECHERCHER UN PRODUIT…</span><span>0 / PANIER</span></div>
+        <div class="ctrltech-preview-body"><div class="ctrltech-preview-side"><span></span><span></span><span></span><span></span><span></span></div><div class="ctrltech-preview-main"><small>LA SÉLECTION CTRL-TECH</small><h3>Le bon équipement.<br>La bonne décision.</h3><div class="ctrltech-preview-products"><div class="ctrltech-preview-card"><div class="ctrltech-device"></div><i></i><b>SMARTPHONE</b></div><div class="ctrltech-preview-card"><div class="ctrltech-device"></div><i></i><b>ORDINATEUR</b></div><div class="ctrltech-preview-card"><div class="ctrltech-device"></div><i></i><b>TABLETTE</b></div></div></div></div>
+        <span class="ctrltech-preview-label">DIGITAL COMMERCE / EXPERIENCE</span>
+      </div>
+      <span class="product-visual-caption">APERÇU DE LA PLATEFORME · CTRL-TECH</span>
+    </div>
+  </article>
+
   <div class="product-capabilities rv"><div><span class="eyebrow">Le périmètre produit</span><h2>Un espace de travail pour garder le contrôle.</h2><p>La plateforme rassemble les fonctions essentielles au traitement structuré des demandes, sans prétendre remplacer l'analyse juridique des équipes.</p></div>
     <div class="product-capability-grid">
       <article><span>01</span><h3>Gestion des demandes</h3><p>Centralisation des demandes, informations du demandeur et suivi de leur traitement.</p></article>
@@ -622,6 +701,40 @@ header{padding-left:max(5vw,env(safe-area-inset-left));padding-right:max(5vw,env
   </section>
   <div class="dsar-detail-roadmap rv"><div><span class="eyebrow">État du développement</span><h2>Nous construisons avant d'ouvrir.</h2><p>La priorité actuelle est de finaliser les parcours essentiels, de valider la fiabilité de la plateforme et de préparer une expérience cohérente avant toute commercialisation.</p></div><div class="roadmap-track"><div class="roadmap-step done"><i></i><b>Socle technique</b><span>Architecture, authentification et organisations</span></div><div class="roadmap-step current"><i></i><b>Développement fonctionnel</b><span>Demandes, suivi, historique et documents</span></div><div class="roadmap-step"><i></i><b>Validation et lancement</b><span>Tests, sécurité, finalisation et ouverture commerciale</span></div></div></div>
   <div class="dsar-detail-bottom rv"><div><span class="eyebrow">DSAR Pilot · Walden Corp</span><h2>Vous souhaitez suivre l'évolution du produit ?</h2><p>Contactez notre équipe pour échanger sur le projet et son futur lancement.</p></div><a class="btn dsar-detail-primary" href="/contact">Contacter Walden Corp</a></div>
+</section>
+
+
+<section class="page" id="p-ctrl-tech">
+  <div class="ctrltech-detail-hero">
+    <div class="ctrltech-detail-copy">
+      <a class="ctrltech-back" href="/produits">← Tous les produits</a>
+      <div class="product-brandline"><span class="ctrltech-mark" aria-hidden="true">CT</span><span>WALDEN CORP <i>/</i> PRODUCT 002</span></div>
+      <div class="product-status"><span></span> PLATEFORME E-COMMERCE · RÉALISATION WALDEN CORP</div>
+      <h1 class="hl">Ctrl-Tech<span>.</span></h1>
+      <p class="ctrltech-detail-tagline">Une boutique en ligne conçue autour d'un parcours d'achat clair, structuré et accompagné.</p>
+      <p>Walden Corp a conçu et développé la plateforme digitale de Ctrl-Tech pour organiser son catalogue, faciliter la découverte des équipements et proposer un parcours client cohérent, de la consultation des références jusqu'à la préparation d'une commande.</p>
+      <div class="ctrltech-detail-actions"><a class="btn product-cta" href="https://ctrl-tech-site.vercel.app/" target="_blank" rel="noopener noreferrer">Visiter la plateforme <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a><a class="btn g" href="/contact">Demander un projet similaire</a></div>
+      <div class="ctrltech-detail-note"><strong>État du projet :</strong> la plateforme est accessible en démonstration. Les parcours de commande et certaines opérations d'administration restent en phase de validation avant ouverture complète.</div>
+    </div>
+    <div class="ctrltech-detail-art">
+      <div class="ctrltech-preview" role="img" aria-label="Aperçu de l'interface e-commerce Ctrl-Tech">
+        <div class="ctrltech-preview-top"><div class="ctrltech-preview-brand"><b>CT</b> CTRL-TECH</div><span class="ctrltech-preview-search">CATALOGUE / RECHERCHE</span><span>ESPACE CLIENT</span></div>
+        <div class="ctrltech-preview-body"><div class="ctrltech-preview-side"><span></span><span></span><span></span><span></span><span></span></div><div class="ctrltech-preview-main"><small>COLLECTION / 01</small><h3>Technology,<br>selected with precision.</h3><div class="ctrltech-preview-products"><div class="ctrltech-preview-card"><div class="ctrltech-device"></div><i></i><b>ESSENTIALS</b></div><div class="ctrltech-preview-card"><div class="ctrltech-device"></div><i></i><b>WORKSPACE</b></div><div class="ctrltech-preview-card"><div class="ctrltech-device"></div><i></i><b>MOBILITY</b></div></div></div></div>
+      </div>
+      <span class="ctrltech-detail-art-note">DESIGNED &amp; ENGINEERED BY WALDEN CORP</span>
+    </div>
+  </div>
+  <div class="ctrltech-detail-intro rv"><span class="eyebrow">Présentation de la réalisation</span><h2>Une expérience commerciale cohérente, de la découverte à la commande.</h2><p>Le projet associe une vitrine e-commerce soignée à des outils de navigation, de comparaison et de gestion. L'objectif est de rendre l'information produit plus accessible et de structurer les interactions entre la boutique, ses clients et son équipe.</p></div>
+  <div class="ctrltech-detail-grid rv">
+    <article><span>01 / CATALOGUE</span><h3>Catalogue structuré</h3><p>Références organisées par catégories et marques, avec recherche et consultation des fiches produit.</p></article>
+    <article><span>02 / DISCOVERY</span><h3>Navigation et comparaison</h3><p>Parcours de découverte, filtres et comparaison pour faciliter l'évaluation des références.</p></article>
+    <article><span>03 / CUSTOMER</span><h3>Espace client</h3><p>Création de compte, connexion et accès à un espace personnel pour les interactions client.</p></article>
+    <article><span>04 / CART</span><h3>Panier et commande</h3><p>Panier persistant et parcours de commande avec vérification de l'authentification avant validation.</p></article>
+    <article><span>05 / OPERATIONS</span><h3>Console d'administration</h3><p>Interface dédiée à la gestion des références et au suivi des opérations de la boutique.</p></article>
+    <article><span>06 / RESPONSIVE</span><h3>Expérience adaptative</h3><p>Interface conçue pour rester lisible et utilisable sur ordinateur, tablette et mobile.</p></article>
+  </div>
+  <div class="ctrltech-process rv"><div><span class="eyebrow">Architecture de l'expérience</span><h2>Un parcours pensé pour chaque interaction.</h2><p>La plateforme relie la découverte des produits, la gestion du panier, l'espace client et les outils d'administration dans une expérience unifiée. Les fonctions sensibles restent soumises à des contrôles d'accès.</p></div><div class="ctrltech-process-steps"><div><i>01</i><b>Explorer</b><span>Parcourir le catalogue et les catégories</span></div><div><i>02</i><b>Comparer</b><span>Évaluer les références disponibles</span></div><div><i>03</i><b>Préparer</b><span>Constituer un panier et accéder à son compte</span></div><div><i>04</i><b>Administrer</b><span>Gérer le catalogue et les opérations</span></div></div></div>
+  <div class="ctrltech-detail-bottom rv"><div><span class="eyebrow">Une réalisation Walden Corp</span><h2>Vous avez un projet e-commerce à structurer ?</h2><p>Nous pouvons concevoir une expérience adaptée à votre catalogue, à vos opérations et aux attentes de vos clients.</p></div><a class="btn" href="/contact">Parler de votre projet</a></div>
 </section>
 
 <section class="page" id="p-services">
@@ -871,11 +984,11 @@ function show(){
   }
   const cleanPath=decodeURIComponent(location.pathname).replace(/^\/+|\/+$/g,'');
   const seg=cleanPath ? cleanPath.split('/') : [''],r=seg[0];
-  const detailProduct=r==='produits'&&seg[1]==='dsar-pilot';
-  const id=r===''?'p-':detailProduct?'p-dsar-pilot':Object.hasOwn(T,r)?'p-'+r:'p-404',p=document.getElementById(id);
+  const detailProduct=r==='produits'&&['dsar-pilot','ctrl-tech'].includes(seg[1]);
+  const id=r===''?'p-':detailProduct?(seg[1]==='dsar-pilot'?'p-dsar-pilot':'p-ctrl-tech'):Object.hasOwn(T,r)?'p-'+r:'p-404',p=document.getElementById(id);
   pages.forEach(x=>x.classList.toggle('on',x===p));
   document.querySelectorAll('#nav a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')===(r ? '/'+r : '/')));
-  document.title=(id==='p-404'?'Page introuvable':detailProduct?'DSAR Pilot':T[r]||'')+(id==='p-'&&!T[r]?'':' — ')+'Walden Corp';
+  document.title=(id==='p-404'?'Page introuvable':detailProduct?(seg[1]==='dsar-pilot'?'DSAR Pilot':'Ctrl-Tech'):T[r]||'')+(id==='p-'&&!T[r]?'':' — ')+'Walden Corp';
   p.querySelectorAll('.hl').forEach(h=>{h.dataset.s='';split(h)});
   io&&io.disconnect();
   io=new IntersectionObserver(es=>es.forEach(e=>{
@@ -901,7 +1014,7 @@ document.querySelectorAll('#nav a, .brand, a.btn').forEach(link=>{
     const url=new URL(link.href,location.origin);
     if(url.origin!==location.origin||event.defaultPrevented||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey||link.target==='_blank')return;
     const path=url.pathname.replace(/\/+$/,'')||'/';
-    if(!['/','/solutions','/produits','/produits/dsar-pilot','/services','/methode','/vision','/fondateur','/contact','/legal','/confirme'].includes(path))return;
+    if(!['/','/solutions','/produits','/produits/dsar-pilot','/produits/ctrl-tech','/services','/methode','/vision','/fondateur','/contact','/legal','/confirme'].includes(path))return;
     event.preventDefault();
     if(location.pathname===path){show();return}
     history.pushState({},'',path+url.hash);
