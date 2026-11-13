@@ -466,6 +466,111 @@ header{padding-left:max(5vw,env(safe-area-inset-left));padding-right:max(5vw,env
 @media(max-width:640px){.ctrltech-detail-hero{padding-top:8px;padding-bottom:42px}.ctrltech-detail-art{min-height:290px}.ctrltech-preview{min-height:280px;padding:11px}.ctrltech-preview-body{grid-template-columns:62px 1fr;gap:8px}.ctrltech-preview-products{gap:5px}.ctrltech-device{height:62px}.ctrltech-preview-card{padding:5px}.ctrltech-detail-grid{grid-template-columns:1fr}.ctrltech-detail-grid article{padding:20px}.ctrltech-process{padding:22px 18px}.ctrltech-process-steps{grid-template-columns:1fr 1fr}.ctrltech-detail-actions{display:grid}.ctrltech-detail-actions .btn{justify-content:center}.ctrltech-detail-bottom{padding:24px 20px}}
 @media(prefers-reduced-motion:reduce){.ctrltech-detail-art:before,.ctrltech-detail-art:after,.ctrltech-detail-art .ctrltech-preview{animation:none!important;transition:none!important}}
 
+
+/* Walden visual refinement — additive layer, November 2026 */
+#p- > .hero{
+  position:relative;
+  isolation:isolate;
+  grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);
+  background:radial-gradient(circle 800px at 70% 40%,color-mix(in srgb,var(--sky) 12%,transparent),transparent 72%);
+  border-radius:28px;
+}
+#p- .home-mark-stage{max-width:450px}
+#p- .home-mark-stage .mark{
+  max-width:450px;
+  filter:drop-shadow(0 20px 40px color-mix(in srgb,var(--navy) 14%,transparent));
+}
+#p- .home-mark-stage:hover .mark polygon:nth-child(2){transform:translateY(-24px)}
+#p- .home-mark-stage .mark polygon{transform-box:fill-box;transform-origin:center}
+#p- .home-pillars .home-pillar:first-child{
+  border-color:color-mix(in srgb,var(--sky) 55%,var(--line));
+  background:linear-gradient(135deg,var(--card),color-mix(in srgb,var(--sky) 5%,var(--card)));
+  box-shadow:0 18px 46px color-mix(in srgb,var(--navy) 9%,transparent);
+}
+#p- .home-pillar:hover .home-pillar-art svg,
+.service-card:hover .service-icon svg{
+  transform:scale(1.08) rotate(-4deg);
+  filter:drop-shadow(0 8px 14px color-mix(in srgb,var(--sky) 32%,transparent));
+}
+.home-pillar-art svg,.service-icon svg{transition:transform .3s cubic-bezier(.34,1.56,.64,1),filter .3s}
+.services-grid .service-card:first-child{
+  grid-column:span 2;
+  border:2px solid var(--sky);
+  background:linear-gradient(135deg,var(--card),color-mix(in srgb,var(--sky) 5%,var(--card)));
+  box-shadow:0 20px 60px color-mix(in srgb,var(--navy) 10%,transparent);
+}
+.services-grid .service-card:not(:first-child){
+  transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s,box-shadow .3s;
+}
+.services-grid .service-card:not(:first-child):hover{
+  transform:translateY(-7px);
+  border-color:var(--sky);
+  box-shadow:0 16px 40px color-mix(in srgb,var(--navy) 10%,transparent);
+}
+.method-steps-grid .method-step-card{
+  animation:walden-step-in .65s ease-out both;
+}
+.method-steps-grid .method-step-card:nth-child(1){animation-delay:.08s}
+.method-steps-grid .method-step-card:nth-child(2){animation-delay:.16s}
+.method-steps-grid .method-step-card:nth-child(3){animation-delay:.24s}
+.method-steps-grid .method-step-card:nth-child(4){animation-delay:.32s}
+.method-steps-grid .method-step-card:nth-child(5){animation-delay:.4s}
+@keyframes walden-step-in{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.method-step-card .method-step-card-top>span:first-child{
+  box-shadow:0 0 0 3px color-mix(in srgb,var(--sky) 28%,transparent);
+  transition:transform .25s,box-shadow .25s;
+}
+.method-step-card:hover .method-step-card-top>span:first-child{
+  transform:scale(1.08);
+  box-shadow:0 0 0 5px color-mix(in srgb,var(--sky) 24%,transparent),0 8px 20px color-mix(in srgb,var(--navy) 14%,transparent);
+}
+.fn{
+  padding:26px;
+  border:1px solid color-mix(in srgb,var(--sun) 28%,var(--line));
+  border-radius:20px;
+  background:linear-gradient(135deg,color-mix(in srgb,var(--sun) 8%,transparent),transparent 78%);
+}
+.fn form{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.fn input{
+  flex:1;min-width:180px;
+  border:1.5px solid color-mix(in srgb,var(--sun) 72%,var(--line));
+  background:color-mix(in srgb,var(--sun) 5%,var(--card));
+  border-radius:12px;
+}
+.fn input:focus{
+  outline:0;border-color:var(--sky);
+  box-shadow:0 0 0 4px color-mix(in srgb,var(--sun) 22%,transparent);
+}
+.fn .btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  border-radius:12px;transition:transform .25s,box-shadow .25s;
+}
+.fn .btn:hover{transform:translateY(-2px);box-shadow:0 8px 16px color-mix(in srgb,var(--navy) 20%,transparent)}
+#nls{padding:0;border-radius:10px;transition:all .25s}
+#nls:not(:empty){margin-top:12px;padding:12px 16px;background:color-mix(in srgb,var(--sun) 12%,transparent);border:1px solid color-mix(in srgb,var(--sun) 30%,transparent);animation:walden-step-in .3s ease-out}
+.btn{isolation:isolate;overflow:hidden}
+.btn:active{transform:translateY(1px) scale(.985)}
+.btn:focus-visible,button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+  outline:3px solid var(--sun);outline-offset:3px;
+  box-shadow:0 0 0 6px color-mix(in srgb,var(--sun) 18%,transparent);
+}
+.strip{background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--sky) 8%,transparent),transparent)}
+.page.on{animation:walden-page-in .35s ease-out}
+@keyframes walden-page-in{from{opacity:.78;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:820px){
+  #p- > .hero{grid-template-columns:1fr}
+  .services-grid .service-card:first-child{grid-column:span 1}
+}
+@media(max-width:560px){
+  .fn{padding:20px}
+  .fn form{display:grid;grid-template-columns:1fr}
+  .fn input{min-width:0}
+}
+@media(prefers-reduced-motion:reduce){
+  .method-steps-grid .method-step-card,.page.on,#nls:not(:empty){animation:none}
+  .home-pillar-art svg,.service-icon svg{transition:none}
+}
+
 </style>
 <script>try{const savedTheme=localStorage.getItem('walden-theme');if(savedTheme==='light'||savedTheme==='dark')document.documentElement.dataset.theme=savedTheme}catch{}</script>
 </head>
@@ -763,7 +868,7 @@ header{padding-left:max(5vw,env(safe-area-inset-left));padding-right:max(5vw,env
 
   <div class="services-section-heading rv"><span class="eyebrow">Ce que nous prenons en charge</span><h2>Les bons services, au bon moment.</h2><p>Vous pouvez nous confier une étape précise ou nous accompagner sur tout le cycle de vie du produit.</p></div>
   <div class="services-grid">
-    <article class="service-card rv" id="concevoir">
+    <article class="service-card rv featured" id="concevoir">
       <div class="service-card-top"><span class="service-index">01</span><span class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4" width="17" height="16" rx="2.5"/><path d="M8 4v16M11 8h5M11 12h5M11 16h3"/></svg></span></div>
       <h3>Stratégie &amp; conception</h3><p class="service-card-intro">Clarifier le problème avant d'investir dans le développement.</p>
       <ul><li>Analyse des besoins et des utilisateurs</li><li>Ateliers de cadrage et spécifications fonctionnelles</li><li>Parcours utilisateurs, UX/UI et prototypes</li><li>Choix technologiques et architecture initiale</li></ul>
